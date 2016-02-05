@@ -10,37 +10,91 @@ import UIKit
 
 class AttractionTableViewController: UITableViewController {
     
+//    let date = NSDate()
+//    let calendar = NSCalendar.currentCalendar()
+//    let components = NSCalendar.currentCalendar().components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
+//    let hour = components.hour
+//    let minutes = components.minute
+    
+    let currentDate = NSDate()
+    //let dateComponents = NSDateComponents()
+    let calendar = NSCalendar.currentCalendar()
+    let dateComponents = NSCalendar.currentCalendar().components([NSCalendarUnit.Day, NSCalendarUnit.Month, NSCalendarUnit.Year, NSCalendarUnit.WeekOfYear, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second, NSCalendarUnit.Nanosecond], fromDate: NSDate())
+    
+    //dateComponents.month
+    
+    
+//    let year = NSDateComponents().year
+//    let month = NSDateComponents().month
+//    let day = NSDateComponents().day
+//    let hour = NSDateComponents().hour
+//    let minute = NSDateComponents().minute
+    
+    
     var attractionImages = [String]()
     var attractionNames = [String]()
     var attractionNames2 = [String]()
-    var webAddresses = [String]()
+    var times = [Int]()
+    var current: Int = 0
+    var current2: Int = 0
+    var timesAppend: Int = 0
+//    var cells1: Int = 0
+//    var cells2: Int = 0
+    
+    func sortTime(){
+        for ( var i: Int = 0;i < 23; i++){
+            timesAppend = (dateComponents.hour + i)
+            if (timesAppend > 24){
+                timesAppend = timesAppend - 24
+            }
+            times.append(timesAppend)
+        }
+        for time in times {
+            if (dateComponents.hour == time){
+                if (time == 12){
+                    attractionNames.append("\(time) pm")
+                }
+                else if (time > 12){
+                    current = time - 12
+                    attractionNames.append("\(current) pm")
+                }
+                else {
+                    attractionNames.append("\(time) am")
+                }
+                attractionImages.append("profile.png")
+                //                cells1++
+            }
+            else {
+                if (time == 12){
+                    attractionNames2.append("\(time) pm")
+                }
+                else if (time > 12){
+                    current2 = time - 12
+                    attractionNames2.append("\(current2) pm")
+                }
+                else {
+                    attractionNames2.append("\(time) am")
+                }
+                attractionImages.append("profile.png")
+            }
+        }
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sortTime()
+//        attractionNames = []
+//        
+//        attractionNames2 = []
         
-        attractionNames = ["Special 1",
-            "Special 2",
-            "Special 3",
-            "Special 4",
-            "Special 5"]
         
-        attractionNames2 = ["Special 6",
-            "Special 7",
-            "Special 8",
-            "Special 9",
-            "Special 10"]
         
-        webAddresses = ["http://en.wikipedia.org/wiki/Buckingham_Palace",
-            "http://en.wikipedia.org/wiki/Eiffel_Tower",
-            "http://en.wikipedia.org/wiki/Grand_Canyon",
-            "http://en.wikipedia.org/wiki/Windsor_Castle",
-            "http://en.wikipedia.org/wiki/Empire_State_Building"]
-        
-        attractionImages = ["profile.png",
-            "profile.png",
-            "profile.png",
-            "profile.png",
-            "profile.png"]
+//        attractionImages = ["profile.png",
+//            "profile.png",
+//            "profile.png",
+//            "profile.png",
+//            "profile.png"]
         
         tableView.estimatedRowHeight = 50
     }
@@ -56,9 +110,13 @@ class AttractionTableViewController: UITableViewController {
         
         return 2
     }
-
+    
+    var numberOfRowsAtSection: [Int] = []
+    var rows: Int = 0
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return attractionNames.count
+        numberOfRowsAtSection = [attractionNames.count,attractionNames2.count]
+        rows = numberOfRowsAtSection[section]
+        return rows
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
