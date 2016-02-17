@@ -10,95 +10,46 @@ import UIKit
 
 class AttractionTableViewController: UITableViewController {
     
-//    let date = NSDate()
-//    let calendar = NSCalendar.currentCalendar()
-//    let components = NSCalendar.currentCalendar().components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
-//    let hour = components.hour
-//    let minutes = components.minute
-    
-    let currentDate = NSDate()
-    //let dateComponents = NSDateComponents()
-    let calendar = NSCalendar.currentCalendar()
-    let dateComponents = NSCalendar.currentCalendar().components([NSCalendarUnit.Day, NSCalendarUnit.Month, NSCalendarUnit.Year, NSCalendarUnit.WeekOfYear, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second, NSCalendarUnit.Nanosecond], fromDate: NSDate())
-    
-    //dateComponents.month
-    
-    
-//    let year = NSDateComponents().year
-//    let month = NSDateComponents().month
-//    let day = NSDateComponents().day
-//    let hour = NSDateComponents().hour
-//    let minute = NSDateComponents().minute
-    
-    
     var attractionImages = [String]()
     var attractionNames = [String]()
     var attractionNames2 = [String]()
-    var times = [Int]()
-    var current: Int = 0
-    var current2: Int = 0
-    var timesAppend: Int = 0
-//    var cells1: Int = 0
-//    var cells2: Int = 0
+    var webAddresses = [String]()
     
-    func sortTime(){
-        for ( var i: Int = 0;i < 23; i++){
-            timesAppend = (dateComponents.hour + i)
-            if (timesAppend > 24){
-                timesAppend = timesAppend - 24
-            }
-            times.append(timesAppend)
-        }
-        for time in times {
-            if (dateComponents.hour == time){
-                if (time == 12){
-                    attractionNames.append("\(time) pm")
-                }
-                else if (time > 12){
-                    current = time - 12
-                    attractionNames.append("\(current) pm")
-                }
-                else {
-                    attractionNames.append("\(time) am")
-                }
-                attractionImages.append("profile.png")
-                //                cells1++
-            }
-            else {
-                if (time == 12){
-                    attractionNames2.append("\(time) pm")
-                }
-                else if (time > 12){
-                    current2 = time - 12
-                    attractionNames2.append("\(current2) pm")
-                }
-                else {
-                    attractionNames2.append("\(time) am")
-                }
-                attractionImages.append("profile.png")
-            }
-        }
-
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sortTime()
-//        attractionNames = []
-//        
-//        attractionNames2 = []
+       
         
+        attractionNames = ["$4 COLLEGE\nMARGARITAS                                                  9-12AM",
+            "$3 CALLS\n$4 WELLS                                                         6-10PM",
+            "$7 PITCHERS\nOF PBR                                                             5-12AM",
+            "FISHBOWLS\nALL NIGHT                                                       6-12AM",
+            "FREE LAP\nDANCES                                                           9-10PM"]
         
+        attractionNames2 = ["$2 WELL\nTEQUILA SHOTS                                                9-10PM",
+            "$2 OLD\nENGLISH 40'S                                                    8-11PM",
+            "$4.50\nALL MICROBREWS                                             9-10PM",
+            "LADIES\nDRINK FREE                                                       6-12AM",
+            "$30 PRIVATE\nROOM SPECIALS                                               7-11PM"]
         
-//        attractionImages = ["profile.png",
-//            "profile.png",
-//            "profile.png",
-//            "profile.png",
-//            "profile.png"]
+        webAddresses = ["http://en.wikipedia.org/wiki/Buckingham_Palace",
+            "http://en.wikipedia.org/wiki/Eiffel_Tower",
+            "http://en.wikipedia.org/wiki/Grand_Canyon",
+            "http://en.wikipedia.org/wiki/Windsor_Castle",
+            "http://en.wikipedia.org/wiki/Empire_State_Building"]
+        
+        attractionImages = ["awesome-circle-tattoo-design2",
+            "saloon4",
+            "sd2",
+            "bottle3",
+            "stripper 3"]
         
         tableView.estimatedRowHeight = 50
+        
     }
     
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -110,23 +61,34 @@ class AttractionTableViewController: UITableViewController {
         
         return 2
     }
-    
-    var numberOfRowsAtSection: [Int] = []
-    var rows: Int = 0
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        numberOfRowsAtSection = [attractionNames.count,attractionNames2.count]
-        rows = numberOfRowsAtSection[section]
-        return rows
+        return attractionNames.count
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if (section == 0){
-            return "Happening Now"
+            return "H A P P E N I N G   N O W"
         }
         if (section == 1){
-            return "Later Tonight"
+            return "L A T E R   T O N I G H T"
         }
         return nil
+    }
+    
+
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let headerview = view as! UITableViewHeaderFooterView
+        headerview.textLabel
+        headerview.textLabel?.font = UIFont(name: "Helvetica Neue", size: 14)
+        headerview.textLabel?.textColor = .whiteColor()
+        headerview.textLabel?.textAlignment = NSTextAlignment.Center
+        headerview.backgroundColor = .clearColor()
+        headerview.tintColor = .clearColor()
+       
+        
+        
+        
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -135,6 +97,12 @@ class AttractionTableViewController: UITableViewController {
         self.tableView.dequeueReusableCellWithIdentifier(
             "AttractionTableCell", forIndexPath: indexPath)
             as! AttractionTableViewCell
+
+        let backgroundImage = UIImage(named: "blued.jpg")
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
+        tableView.tableFooterView = UIView(frame: CGRectZero)
+        imageView.contentMode = .ScaleAspectFill
         
 //        let row = indexPath.row
 //        cell.attractionLabel.font =
@@ -154,6 +122,9 @@ class AttractionTableViewController: UITableViewController {
         }
         return cell
     }
+    
+    
+    
     
     /*
     // Override to support conditional editing of the table view.
@@ -200,4 +171,7 @@ class AttractionTableViewController: UITableViewController {
     }
     */
 
+
+    
+    
 }
