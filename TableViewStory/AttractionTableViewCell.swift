@@ -12,6 +12,7 @@ class AttractionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var attractionImage: UIImageView!
     
+    @IBOutlet weak var attractionTime: UILabel!
     
     @IBOutlet weak var attractionLabel: UILabel!
     
