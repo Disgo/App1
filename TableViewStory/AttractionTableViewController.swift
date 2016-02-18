@@ -41,7 +41,14 @@ class AttractionTableViewController: UITableViewController {
     
     var DBarray: [[Int]] = [[18,19], [19,20], [21], [22,23], [20]]
     
-    
+    func resetArray(){
+        attractionImages.removeAll()
+        attractionImages2.removeAll()
+        attractionNames.removeAll()
+        attractionNames2.removeAll()
+        attractionTimes.removeAll()
+        attractionTimes2.removeAll()
+    }
     func appendArray(){
         for var x = 0; x < DBarray.count; x++ {
             DBarray[x].append(x)
@@ -49,6 +56,7 @@ class AttractionTableViewController: UITableViewController {
     }
     
     func sortTime(){
+        
         var xIndex = [Int]()
         let array = DBarray.sort { ($0[0] as? Int) < ($1[0] as? Int) }
         for var x = 0; x < array.count; x++ {
@@ -137,17 +145,23 @@ class AttractionTableViewController: UITableViewController {
                 }
             }
         }
-        
+        if attractionNames.count==0{
+            attractionImages.append("")
+            attractionNames.append("There are no specials happening right now!")
+            attractionTimes.append("")
+        }
     }
     
     
     func refresh(sender:AnyObject)
     {
         // Updating your data here...
+        resetArray()
+        appendArray()
+        sortTime()
         
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
-        sortTime()
     }
     
     
@@ -225,16 +239,21 @@ class AttractionTableViewController: UITableViewController {
         self.tableView.backgroundView = imageView
         tableView.tableFooterView = UIView(frame: CGRectZero)
         imageView.contentMode = .ScaleAspectFill
+        
 
         
-                if (indexPath.section == 0){
+        if (indexPath.section == 0){
             cell.attractionLabel.text = attractionNames[indexPath.row]
-            cell.attractionImage.image = UIImage(named: attractionImages[indexPath.row])
+            cell.attractionTime.text = attractionTimes[indexPath.row]
+            cell.imageView!.image = UIImage(named: attractionImages[indexPath.row])
+            //cell.attractionImage.image = UIImage(named: attractionImages[indexPath.row])
             
         }
         if (indexPath.section == 1){
             cell.attractionLabel.text = attractionNames2[indexPath.row]
-            cell.attractionImage.image = UIImage(named: attractionImages2[indexPath.row])
+            cell.attractionTime.text = attractionTimes2[indexPath.row]
+            cell.imageView!.image = UIImage(named: attractionImages2[indexPath.row])
+            //cell.attractionImage.image = UIImage(named: attractionImages2[indexPath.row])
             
         }
         return cell

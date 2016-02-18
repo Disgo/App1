@@ -10,11 +10,11 @@ import UIKit
 
 class AttractionTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var attractionImage: UIImageView!
-    
-    @IBOutlet weak var attractionTime: UILabel!
+    //@IBOutlet weak var attractionImage: UIImageView!
     
     @IBOutlet weak var attractionLabel: UILabel!
+    
+    @IBOutlet weak var attractionTime: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
