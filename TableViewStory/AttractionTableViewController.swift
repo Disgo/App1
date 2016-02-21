@@ -8,9 +8,6 @@
 
 import UIKit
 
-
-
-
 class AttractionTableViewController: UITableViewController {
     
     let currentDate = NSDate()
@@ -30,35 +27,19 @@ class AttractionTableViewController: UITableViewController {
     var current2: Int = 0
     var timesAppend: Int = 0
     var i: Int = 0
-    var specialsArray: [String] = ["$4 College Margaritas",
-                "$3 Calls\n$4 Wells\n$5 Domestics",
-                "$7 Pitchers of PBR",
-                "Fishbowls ALL NIGHT",
-                "Buy-One-Get-One-Free Shots",
-                "Tequila Shots Half Off",
-                "6-Pack of Coors only $5",
-                "$10 Pitchers of Stella",
-                "$1 16 oz. PBR Tallboys",
-                "Ladies Drink Free Wells",
-                "Free Shot Hour",
-                "Jose Cuervo shots only $2",
-                "$3 Bloody Mary's\n$3 Rum & Cokes"]
-    var specialsImages: [String] = ["t2",
-    "t2",
-    "t2",
-    "t2",
-    "t2",
-    "t2",
-    "t2",
-    "t2",
-    "t2",
-    "t2",
-    "t2",
-    "t2",
-    "t2"]
+    var specialsArray: [String] = ["$4 COLLEGE MARGARITAS",
+                "$3 CALLS\n$4 WELLS",
+                "$7 PITCHERS OF PBR",
+                "FISHBOWLS ALL NIGHT",
+                "FREE LAP DANCES"]
+    var specialsImages: [String] = ["icon-test",
+    "icon-test",
+    "icon-test",
+    "icon-test",
+    "icon-test"]
 
     
-    var DBarray: [[Int]] = [[18,19], [19,20], [21], [22,23], [20], [23], [23], [23], [23], [23], [23], [23], [23]]
+    var DBarray: [[Int]] = [[12,13], [19,20], [21], [22,23], [20]]
     
     func resetArray(){
         attractionImages.removeAll()
@@ -89,18 +70,18 @@ class AttractionTableViewController: UITableViewController {
                 if (dateComponents.hour == time){
                     xIndex.append(x)
                     if (timeStart == 12){
-                        attractionTimes.append("\(timeStart)PM-\(timeEnd)PM")
+                        attractionTimes.append("\(timeStart) pm - \(timeEnd) pm")
                         attractionNames.append(specialsArray[array[x][array[x].count-1]])
                         attractionImages.append(specialsImages[array[x][array[x].count-1]])
                     }
                     else if (timeStart > 12){
                         current = timeStart - 12
-                        attractionTimes.append("\(current)PM-\(timeEnd)PM")
+                        attractionTimes.append("\(current) pm - \(timeEnd) pm")
                         attractionNames.append(specialsArray[array[x][array[x].count-1]])
                         attractionImages.append(specialsImages[array[x][array[x].count-1]])
                     }
                     else {
-                        attractionTimes.append("\(timeStart)AM-\(timeEnd)AM")
+                        attractionTimes.append("\(timeStart) am - \(timeEnd) am")
                         attractionNames.append(specialsArray[array[x][array[x].count-1]])
                         attractionImages.append(specialsImages[array[x][array[x].count-1]])
                     }
@@ -129,12 +110,12 @@ class AttractionTableViewController: UITableViewController {
                             if (timeStart == 12){
                                 if timeEnd > 12{
                                     timeEnd = timeEnd - 12
-                                    attractionTimes2.append("\(timeStart)PM-\(timeEnd)AM")
+                                    attractionTimes2.append("\(timeStart) pm - \(timeEnd) am")
                                     attractionNames2.append(specialsArray[array[x][array[x].count-1]])
                                     attractionImages2.append(specialsImages[array[x][array[x].count-1]])
                                 }
                                 else{
-                                    attractionTimes2.append("\(timeStart)PM-\(timeEnd)PM")
+                                    attractionTimes2.append("\(timeStart) pm - \(timeEnd) pm")
                                     attractionNames2.append(specialsArray[array[x][array[x].count-1]])
                                     attractionImages2.append(specialsImages[array[x][array[x].count-1]])
                                 }
@@ -143,18 +124,18 @@ class AttractionTableViewController: UITableViewController {
                                 current2 = time - 12
                                 if timeEnd > 12{
                                     timeEnd = timeEnd - 12
-                                    attractionTimes2.append("\(current2)PM-\(timeEnd)AM")
+                                    attractionTimes2.append("\(current2) pm - \(timeEnd) am")
                                     attractionNames2.append(specialsArray[array[x][array[x].count-1]])
                                     attractionImages2.append(specialsImages[array[x][array[x].count-1]])
                                 }
                                 else{
-                                    attractionTimes2.append("\(current2)PM-\(timeEnd)PM")
+                                    attractionTimes2.append("\(current2) pm - \(timeEnd) pm")
                                     attractionNames2.append(specialsArray[array[x][array[x].count-1]])
                                     attractionImages2.append(specialsImages[array[x][array[x].count-1]])
                                 }
                             }
                             else {
-                                attractionNames2.append("\(timeStart)AM-\(timeEnd) AM")
+                                attractionNames2.append("\(timeStart) am - \(timeEnd) am")
                                 attractionNames2.append(specialsArray[array[x][array[x].count-1]])
                                 attractionImages2.append(specialsImages[array[x][array[x].count-1]])
                             }
@@ -168,13 +149,8 @@ class AttractionTableViewController: UITableViewController {
             attractionImages.append("")
             attractionNames.append("There are no specials happening right now!")
             attractionTimes.append("")
-
         }
-
-        
-        
     }
-
     
     
     func refresh(sender:AnyObject)
@@ -253,16 +229,10 @@ class AttractionTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        
         let cell =
         self.tableView.dequeueReusableCellWithIdentifier(
             "AttractionTableCell", forIndexPath: indexPath)
             as! AttractionTableViewCell
-        
-
-        
-
-        
         
         let backgroundImage = UIImage(named: "blued.jpg")
         let imageView = UIImageView(image: backgroundImage)
@@ -270,10 +240,10 @@ class AttractionTableViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: CGRectZero)
         imageView.contentMode = .ScaleAspectFill
         
-       self.tableView.separatorColor = UIColor.grayColor()
+        self.tableView.separatorColor = UIColor.grayColor()
         tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
-    
         
+
         
         if (indexPath.section == 0){
             cell.attractionLabel.text = attractionNames[indexPath.row]

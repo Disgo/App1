@@ -9,8 +9,6 @@
 import UIKit
 
 class AttractionTableViewCell: UITableViewCell {
-    
-    
 
     //@IBOutlet weak var attractionImage: UIImageView!
     

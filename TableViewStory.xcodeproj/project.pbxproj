@@ -13,6 +13,8 @@
 		6DAFE8AD1C58605000A4FBCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DAFE8AB1C58605000A4FBCA /* LaunchScreen.storyboard */; };
 		6DAFE8B71C5861C700A4FBCA /* AttractionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAFE8B61C5861C700A4FBCA /* AttractionTableViewController.swift */; };
 		6DAFE8B91C5861EE00A4FBCA /* AttractionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAFE8B81C5861EE00A4FBCA /* AttractionTableViewCell.swift */; };
+		6DE7FBA41C7952F300CBA9E0 /* ProfileScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE7FBA31C7952F300CBA9E0 /* ProfileScrollView.swift */; };
+		6DE7FBA61C7953DD00CBA9E0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE7FBA51C7953DD00CBA9E0 /* ProfileViewController.swift */; };
 		CE0EAE1F1C73D71400820B9E /* porch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE0EAE1E1C73D71400820B9E /* porch.jpg */; };
 		CE0EAE291C73E44600820B9E /* blued.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE0EAE281C73E44600820B9E /* blued.jpg */; };
 		CE0EAE2B1C73E4F400820B9E /* bluedcopy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE0EAE2A1C73E4F400820B9E /* bluedcopy.jpg */; };
@@ -28,6 +30,8 @@
 		6DAFE8AE1C58605000A4FBCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DAFE8B61C5861C700A4FBCA /* AttractionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionTableViewController.swift; sourceTree = "<group>"; };
 		6DAFE8B81C5861EE00A4FBCA /* AttractionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionTableViewCell.swift; sourceTree = "<group>"; };
+		6DE7FBA31C7952F300CBA9E0 /* ProfileScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileScrollView.swift; path = ../ProfileScrollView.swift; sourceTree = "<group>"; };
+		6DE7FBA51C7953DD00CBA9E0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
 		CE0EAE1E1C73D71400820B9E /* porch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = porch.jpg; sourceTree = "<group>"; };
 		CE0EAE281C73E44600820B9E /* blued.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blued.jpg; sourceTree = "<group>"; };
 		CE0EAE2A1C73E4F400820B9E /* bluedcopy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bluedcopy.jpg; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 		6DAFE8A11C58605000A4FBCA /* TableViewStory */ = {
 			isa = PBXGroup;
 			children = (
+				6DE7FBA51C7953DD00CBA9E0 /* ProfileViewController.swift */,
+				6DE7FBA31C7952F300CBA9E0 /* ProfileScrollView.swift */,
 				CE0EAE2A1C73E4F400820B9E /* bluedcopy.jpg */,
 				CE0EAE281C73E44600820B9E /* blued.jpg */,
 				CE0EAE1E1C73D71400820B9E /* porch.jpg */,
@@ -156,6 +162,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DAFE8B71C5861C700A4FBCA /* AttractionTableViewController.swift in Sources */,
+				6DE7FBA41C7952F300CBA9E0 /* ProfileScrollView.swift in Sources */,
+				6DE7FBA61C7953DD00CBA9E0 /* ProfileViewController.swift in Sources */,
 				6DAFE8B91C5861EE00A4FBCA /* AttractionTableViewCell.swift in Sources */,
 				6DAFE8A31C58605000A4FBCA /* AppDelegate.swift in Sources */,
 			);
@@ -268,13 +276,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TableViewStory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.TableViewStory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "TableViewStory/TableViewStory-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -282,12 +287,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TableViewStory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.TableViewStory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "TableViewStory/TableViewStory-Bridging-Header.h";
 			};
 			name = Release;
 		};
