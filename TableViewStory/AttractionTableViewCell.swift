@@ -9,6 +9,8 @@
 import UIKit
 
 class AttractionTableViewCell: UITableViewCell {
+    
+    var barName = ""
 
     //@IBOutlet weak var attractionImage: UIImageView!
     
@@ -23,8 +25,8 @@ class AttractionTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
+        barName = "Best"
     }
 
 }

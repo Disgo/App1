@@ -22,6 +22,7 @@ class AttractionTableViewController: UITableViewController {
     var attractionNames2 = [String]()
     var attractionTimes = [String]()
     var attractionTimes2 = [String]()
+    var barName = "From AttractionTableViewController"
     var times = [Int]()
     var current: Int = 0
     var current2: Int = 0
@@ -145,11 +146,6 @@ class AttractionTableViewController: UITableViewController {
                 }
             }
         }
-        if attractionNames.count==0{
-            attractionImages.append("")
-            attractionNames.append("There are no specials happening right now!")
-            attractionTimes.append("")
-        }
     }
     
     
@@ -157,7 +153,6 @@ class AttractionTableViewController: UITableViewController {
     {
         // Updating your data here...
         resetArray()
-        appendArray()
         sortTime()
         
         self.tableView.reloadData()
@@ -246,6 +241,11 @@ class AttractionTableViewController: UITableViewController {
 
         
         if (indexPath.section == 0){
+            if attractionNames.count==0{
+                attractionImages.append("")
+                attractionNames.append("There are no specials happening right now!")
+                attractionTimes.append("")
+            }
             cell.attractionLabel.text = attractionNames[indexPath.row]
             cell.attractionTime.text = attractionTimes[indexPath.row]
             cell.imageView!.image = UIImage(named: attractionImages[indexPath.row])
@@ -260,6 +260,10 @@ class AttractionTableViewController: UITableViewController {
             
         }
         return cell
+    }
+    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!)
+    {
+            barName = "Best"
     }
 
 

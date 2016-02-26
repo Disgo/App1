@@ -14,9 +14,15 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var barLabel: UILabel!
+    
+    var myCustomViewController: AttractionTableViewController = AttractionTableViewController(nibName: nil, bundle: nil)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let barName = myCustomViewController.barName
+        barLabel.text = barName
         // Do any additional setup after loading the view.
     }
 
