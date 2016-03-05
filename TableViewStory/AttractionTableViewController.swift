@@ -10,11 +10,14 @@ import UIKit
 
 class AttractionTableViewController: UITableViewController {
     
+    /*Initialize NSDate to get the Day, Month, Year, Week of Year, Hour, Minute, Second, and Nanosecond*/
+    
     let currentDate = NSDate()
-    //let dateComponents = NSDateComponents()
     let calendar = NSCalendar.currentCalendar()
     let dateComponents = NSCalendar.currentCalendar().components([NSCalendarUnit.Day, NSCalendarUnit.Month, NSCalendarUnit.Year, NSCalendarUnit.WeekOfYear, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second, NSCalendarUnit.Nanosecond], fromDate: NSDate())
     
+    /*Declare Variables and Arrays*/
+
     
     var attractionImages = [String]()
     var attractionImages2 = [String]()
@@ -28,19 +31,28 @@ class AttractionTableViewController: UITableViewController {
     var current2: Int = 0
     var timesAppend: Int = 0
     var i: Int = 0
+    
+    /*Listed Specials*/
+
     var specialsArray: [String] = ["$4 COLLEGE MARGARITAS",
                 "$3 CALLS\n$4 WELLS",
                 "$7 PITCHERS OF PBR",
                 "FISHBOWLS ALL NIGHT",
                 "FREE LAP DANCES"]
+    
+    /*Image Names*/
+    
     var specialsImages: [String] = ["icon-test",
     "icon-test",
     "icon-test",
     "icon-test",
     "icon-test"]
 
+    /*Hours that the special is going on (in military time)*/
     
     var DBarray: [[Int]] = [[12,13], [19,20], [21], [22,23], [20]]
+    
+    /*Remove items from popluated arrays when table refreshed*/
     
     func resetArray(){
         attractionImages.removeAll()
@@ -50,16 +62,27 @@ class AttractionTableViewController: UITableViewController {
         attractionTimes.removeAll()
         attractionTimes2.removeAll()
     }
+    
+    /*Append index values to each sub-array*/
+    
     func appendArray(){
         for var x = 0; x < DBarray.count; x++ {
             DBarray[x].append(x)
         }
     }
     
+    /*Sort the specials by time*/
+    
     func sortTime(){
         
         var xIndex = [Int]()
+        
+        /*Sort the DBArray numerically by first value in sub-array so that the specials are organized by time*/
+        
         let array = DBarray.sort { ($0[0] as? Int) < ($1[0] as? Int) }
+        
+        /*Sort through the sub-arrays and add attraction names and times for the Happening Now section*/
+        
         for var x = 0; x < array.count; x++ {
             for var y = 0; y < array[x].count-1; y++ {
                 let timeStart:Int = array[x][0]
@@ -86,13 +109,11 @@ class AttractionTableViewController: UITableViewController {
                         attractionNames.append(specialsArray[array[x][array[x].count-1]])
                         attractionImages.append(specialsImages[array[x][array[x].count-1]])
                     }
-                    //attractionImages.append("profile.png")
-                    //                cells1++
                 }
             }
         }
         
-        
+        /*Sort through the sub-arrays and add attraction names and times for the Later Tonight section*/
         
         for var x = 0; x < array.count; x++ {
             for var y = 0; y < array[x].count-1; y++ {
@@ -149,6 +170,8 @@ class AttractionTableViewController: UITableViewController {
     }
     
     
+    /*On pull to refresh reset the arrays and sort the time*/
+    
     func refresh(sender:AnyObject)
     {
         // Updating your data here...
@@ -163,30 +186,11 @@ class AttractionTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        
+        /*When the screen loads populate array and sort specials*/
+        
         appendArray()
         sortTime()
-
-       
-        
-//        attractionNames = ["$4 COLLEGE MARGARITAS",
-//            "$3 CALLS\n$4 WELLS",
-//            "$7 PITCHERS OF PBR",
-//            "FISHBOWLS ALL NIGHT",
-//            "FREE LAP DANCES"]
-//        
-//        attractionNames2 = ["$2 WELL TEQUILA SHOTS",
-//            "$2 OLD ENGLISH 40'S",
-//            "$4.50 ALL MICROBREWS",
-//            "LADIES DRINK FREE",
-//            "$30 PRIVATE ROOM SPECIALS"]
-//        
-//        
-//        attractionImages = ["awesome-circle-tattoo-design2",
-//            "saloon4",
-//            "sd2",
-//            "bottle3",
-//            "stripper 3"]
-        
         tableView.estimatedRowHeight = 50
         
     }
@@ -201,6 +205,8 @@ class AttractionTableViewController: UITableViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
+        /*Two sections "Happening Now" and "Later Tonight"*/
+        
         return 2
     }
     
@@ -213,13 +219,16 @@ class AttractionTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        /*Header Titles*/
+        
         if (section == 0){
-                        return "H A P P E N I N G   N O W"
-                    }
-                    if (section == 1){
-                        return "L A T E R   T O N I G H T"
-                    }
-                    return nil
+            return "H A P P E N I N G   N O W"
+        }
+        if (section == 1){
+            return "L A T E R   T O N I G H T"
+        }
+        return nil
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -228,6 +237,8 @@ class AttractionTableViewController: UITableViewController {
         self.tableView.dequeueReusableCellWithIdentifier(
             "AttractionTableCell", forIndexPath: indexPath)
             as! AttractionTableViewCell
+        
+        /*Background Image*/
         
         let backgroundImage = UIImage(named: "blued.jpg")
         let imageView = UIImageView(image: backgroundImage)
@@ -241,6 +252,9 @@ class AttractionTableViewController: UITableViewController {
 
         
         if (indexPath.section == 0){
+            
+            /*If there are no specials happening right now, create cell that says there are no cells*/
+            
             if attractionNames.count==0{
                 attractionImages.append("")
                 attractionNames.append("There are no specials happening right now!")
@@ -260,10 +274,6 @@ class AttractionTableViewController: UITableViewController {
             
         }
         return cell
-    }
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!)
-    {
-            barName = "Best"
     }
 
 
