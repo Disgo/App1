@@ -322,24 +322,58 @@
             </objects>
             <point key="canvasLocation" x="2867" y="352"/>
         </scene>
-        <!--Bars-->
-        <scene sceneID="aIb-H5-oHy">
+        <!--DISGO-->
+        <scene sceneID="ML1-5d-arg">
             <objects>
-                <viewController id="HpC-io-xeM" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UIs-36-8l1"/>
-                        <viewControllerLayoutGuide type="bottom" id="yml-eC-BiA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ecl-Qd-Xft">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1fu-3I-PXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <collectionViewController id="x6A-Kb-TRb" customClass="collviewcntrl" customModule="TableViewStory" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="oWN-D8-Dfg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Bars" image="bars_icon" id="9rW-pz-0bo"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xqf-Jq-OPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J5P-pG-pho">
+                            <size key="itemSize" width="100" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="usc-Ys-kU9" customClass="ColViewCell" customModule="TableViewStory" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="90" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="110"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJ6-RH-f4J">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gdc-V5-sj6">
+                                            <rect key="frame" x="0.0" y="83" width="90" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <size key="customSize" width="90" height="110"/>
+                                <connections>
+                                    <outlet property="imgLabel" destination="Gdc-V5-sj6" id="LnD-48-COD"/>
+                                    <outlet property="imgcell" destination="zJ6-RH-f4J" id="P9v-tZ-a48"/>
+                                    <segue destination="hqe-JY-ZGb" kind="show" identifier="SendDataSegue" id="Wsq-wC-EdH"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="x6A-Kb-TRb" id="yMf-H3-Sko"/>
+                            <outlet property="delegate" destination="x6A-Kb-TRb" id="f1n-fj-6dI"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Bars" image="bars_icon" id="88b-dC-gU4"/>
+                    <navigationItem key="navigationItem" title="DISGO" id="Axi-U9-21O"/>
+                </collectionViewController>
             </objects>
-            <point key="canvasLocation" x="1228" y="1109"/>
+            <point key="canvasLocation" x="1952" y="1074"/>
         </scene>
         <!--Specials-->
         <scene sceneID="8X7-Ts-p7z">
@@ -367,7 +401,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7W-s0-NQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1140" y="372"/>
+            <point key="canvasLocation" x="1136" y="380"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="24D-um-njE">
@@ -380,8 +414,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="gZc-cH-rVO" kind="relationship" relationship="viewControllers" id="hJd-Dj-UjK"/>
-                        <segue destination="HpC-io-xeM" kind="relationship" relationship="viewControllers" id="wp9-4S-Yvv"/>
-                        <segue destination="DzK-s7-qFA" kind="relationship" relationship="viewControllers" id="Jz1-Nu-T0z"/>
+                        <segue destination="c8o-qk-ewh" kind="relationship" relationship="viewControllers" id="aCa-5d-4pi"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJU-lr-M7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -407,6 +440,34 @@
             </objects>
             <point key="canvasLocation" x="246" y="1153"/>
         </scene>
+        <!--Bars-->
+        <scene sceneID="gG3-dS-1P0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c8o-qk-ewh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bars" image="bars_icon" id="EPG-LV-8z6"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleAspectFit" barStyle="black" id="6L0-00-O2g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="1" vertical="2"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="x6A-Kb-TRb" kind="relationship" relationship="rootViewController" id="qUj-FG-v2o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mdf-ZZ-LPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1136" y="1068"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bars_icon" width="30" height="30"/>
@@ -414,4 +475,7 @@
         <image name="rainbow_PNG5584" width="900" height="441"/>
         <image name="specials-icon 2" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Wsq-wC-EdH"/>
+    </inferredMetricsTieBreakers>
 </document>

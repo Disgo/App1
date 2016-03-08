@@ -15,6 +15,9 @@
 		6DAFE8B91C5861EE00A4FBCA /* AttractionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAFE8B81C5861EE00A4FBCA /* AttractionTableViewCell.swift */; };
 		6DE7FBA41C7952F300CBA9E0 /* ProfileScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE7FBA31C7952F300CBA9E0 /* ProfileScrollView.swift */; };
 		6DE7FBA61C7953DD00CBA9E0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE7FBA51C7953DD00CBA9E0 /* ProfileViewController.swift */; };
+		6DE7FBAA1C8F300200CBA9E0 /* BarCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE7FBA91C8F300200CBA9E0 /* BarCollectionViewController.swift */; };
+		6DE7FBAD1C8F337D00CBA9E0 /* collviewcntrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE7FBAB1C8F337D00CBA9E0 /* collviewcntrl.swift */; };
+		6DE7FBAE1C8F337D00CBA9E0 /* ColViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE7FBAC1C8F337D00CBA9E0 /* ColViewCell.swift */; };
 		CE0EAE1F1C73D71400820B9E /* porch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE0EAE1E1C73D71400820B9E /* porch.jpg */; };
 		CE0EAE291C73E44600820B9E /* blued.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE0EAE281C73E44600820B9E /* blued.jpg */; };
 		CE0EAE2B1C73E4F400820B9E /* bluedcopy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE0EAE2A1C73E4F400820B9E /* bluedcopy.jpg */; };
@@ -32,6 +35,9 @@
 		6DAFE8B81C5861EE00A4FBCA /* AttractionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionTableViewCell.swift; sourceTree = "<group>"; };
 		6DE7FBA31C7952F300CBA9E0 /* ProfileScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileScrollView.swift; path = ../ProfileScrollView.swift; sourceTree = "<group>"; };
 		6DE7FBA51C7953DD00CBA9E0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
+		6DE7FBA91C8F300200CBA9E0 /* BarCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCollectionViewController.swift; sourceTree = "<group>"; };
+		6DE7FBAB1C8F337D00CBA9E0 /* collviewcntrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collviewcntrl.swift; sourceTree = "<group>"; };
+		6DE7FBAC1C8F337D00CBA9E0 /* ColViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColViewCell.swift; sourceTree = "<group>"; };
 		CE0EAE1E1C73D71400820B9E /* porch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = porch.jpg; sourceTree = "<group>"; };
 		CE0EAE281C73E44600820B9E /* blued.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blued.jpg; sourceTree = "<group>"; };
 		CE0EAE2A1C73E4F400820B9E /* bluedcopy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bluedcopy.jpg; sourceTree = "<group>"; };
@@ -76,6 +82,9 @@
 				CE672C891C73C843009A3FF4 /* wood.jpg */,
 				6DAFE8A21C58605000A4FBCA /* AppDelegate.swift */,
 				6DAFE8A61C58605000A4FBCA /* Main.storyboard */,
+				6DE7FBAB1C8F337D00CBA9E0 /* collviewcntrl.swift */,
+				6DE7FBAC1C8F337D00CBA9E0 /* ColViewCell.swift */,
+				6DE7FBA91C8F300200CBA9E0 /* BarCollectionViewController.swift */,
 				6DAFE8B61C5861C700A4FBCA /* AttractionTableViewController.swift */,
 				6DAFE8B81C5861EE00A4FBCA /* AttractionTableViewCell.swift */,
 				6DAFE8A91C58605000A4FBCA /* Assets.xcassets */,
@@ -161,9 +170,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DE7FBAD1C8F337D00CBA9E0 /* collviewcntrl.swift in Sources */,
 				6DAFE8B71C5861C700A4FBCA /* AttractionTableViewController.swift in Sources */,
 				6DE7FBA41C7952F300CBA9E0 /* ProfileScrollView.swift in Sources */,
+				6DE7FBAA1C8F300200CBA9E0 /* BarCollectionViewController.swift in Sources */,
 				6DE7FBA61C7953DD00CBA9E0 /* ProfileViewController.swift in Sources */,
+				6DE7FBAE1C8F337D00CBA9E0 /* ColViewCell.swift in Sources */,
 				6DAFE8B91C5861EE00A4FBCA /* AttractionTableViewCell.swift in Sources */,
 				6DAFE8A31C58605000A4FBCA /* AppDelegate.swift in Sources */,
 			);
