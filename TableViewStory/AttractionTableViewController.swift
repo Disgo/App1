@@ -25,6 +25,8 @@ class AttractionTableViewController: UITableViewController {
     var attractionNames2 = [String]()
     var attractionTimes = [String]()
     var attractionTimes2 = [String]()
+    var attractionBars = [String]()
+    var attractionBars2 = [String]()
     var barName = "From AttractionTableViewController"
     var times = [Int]()
     var current: Int = 0
@@ -47,6 +49,14 @@ class AttractionTableViewController: UITableViewController {
     "icon-test",
     "icon-test",
     "icon-test"]
+    
+    /*Bar Names*/
+    
+    var barNames: [String] = ["Biergarten",
+        "Walrus",
+        "Tahona",
+        "Absinthe House",
+        "Press Play"]
 
     /*Hours that the special is going on (in military time)*/
     
@@ -61,6 +71,8 @@ class AttractionTableViewController: UITableViewController {
         attractionNames2.removeAll()
         attractionTimes.removeAll()
         attractionTimes2.removeAll()
+        attractionBars.removeAll()
+        attractionBars2.removeAll()
     }
     
     /*Append index values to each sub-array*/
@@ -97,17 +109,20 @@ class AttractionTableViewController: UITableViewController {
                         attractionTimes.append("\(timeStart) pm - \(timeEnd) pm")
                         attractionNames.append(specialsArray[array[x][array[x].count-1]])
                         attractionImages.append(specialsImages[array[x][array[x].count-1]])
+                        attractionBars.append(barNames[array[x][array[x].count-1]])
                     }
                     else if (timeStart > 12){
                         current = timeStart - 12
                         attractionTimes.append("\(current) pm - \(timeEnd) pm")
                         attractionNames.append(specialsArray[array[x][array[x].count-1]])
                         attractionImages.append(specialsImages[array[x][array[x].count-1]])
+                        attractionBars.append(barNames[array[x][array[x].count-1]])
                     }
                     else {
                         attractionTimes.append("\(timeStart) am - \(timeEnd) am")
                         attractionNames.append(specialsArray[array[x][array[x].count-1]])
                         attractionImages.append(specialsImages[array[x][array[x].count-1]])
+                        attractionBars.append(barNames[array[x][array[x].count-1]])
                     }
                 }
             }
@@ -135,11 +150,13 @@ class AttractionTableViewController: UITableViewController {
                                     attractionTimes2.append("\(timeStart) pm - \(timeEnd) am")
                                     attractionNames2.append(specialsArray[array[x][array[x].count-1]])
                                     attractionImages2.append(specialsImages[array[x][array[x].count-1]])
+                                    attractionBars2.append(barNames[array[x][array[x].count-1]])
                                 }
                                 else{
                                     attractionTimes2.append("\(timeStart) pm - \(timeEnd) pm")
                                     attractionNames2.append(specialsArray[array[x][array[x].count-1]])
                                     attractionImages2.append(specialsImages[array[x][array[x].count-1]])
+                                    attractionBars2.append(barNames[array[x][array[x].count-1]])
                                 }
                             }
                             else if (timeStart > 12){
@@ -149,17 +166,20 @@ class AttractionTableViewController: UITableViewController {
                                     attractionTimes2.append("\(current2) pm - \(timeEnd) am")
                                     attractionNames2.append(specialsArray[array[x][array[x].count-1]])
                                     attractionImages2.append(specialsImages[array[x][array[x].count-1]])
+                                    attractionBars2.append(barNames[array[x][array[x].count-1]])
                                 }
                                 else{
                                     attractionTimes2.append("\(current2) pm - \(timeEnd) pm")
                                     attractionNames2.append(specialsArray[array[x][array[x].count-1]])
                                     attractionImages2.append(specialsImages[array[x][array[x].count-1]])
+                                    attractionBars2.append(barNames[array[x][array[x].count-1]])
                                 }
                             }
                             else {
                                 attractionNames2.append("\(timeStart) am - \(timeEnd) am")
                                 attractionNames2.append(specialsArray[array[x][array[x].count-1]])
                                 attractionImages2.append(specialsImages[array[x][array[x].count-1]])
+                                attractionBars2.append(barNames[array[x][array[x].count-1]])
                             }
                             //attractionImages.append("profile.png")
                         }
@@ -291,6 +311,24 @@ class AttractionTableViewController: UITableViewController {
         
     }
     
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SendDataSegue" {
+            if let destination = segue.destinationViewController as? ProfileViewController {
+                
+                let path = tableView.indexPathForSelectedRow
+                let cell = tableView.cellForRowAtIndexPath(path!)
+                if (path!.section == 0){
+                    destination.bar = (attractionBars[path!.row])
+                }
+                if (path!.section == 1){
+                    destination.bar = (attractionBars2[path!.row])
+                }
+                
+            }
+        }
+    }
     
     
     

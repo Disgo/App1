@@ -46,7 +46,7 @@
                                 <connections>
                                     <outlet property="attractionLabel" destination="AmU-ul-j1e" id="Ugb-Lc-p8j"/>
                                     <outlet property="attractionTime" destination="LNk-OI-7zF" id="dLd-Mp-RZj"/>
-                                    <segue destination="hqe-JY-ZGb" kind="show" id="bXp-mW-Pa5"/>
+                                    <segue destination="hqe-JY-ZGb" kind="show" identifier="SendDataSegue" id="bXp-mW-Pa5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -308,7 +308,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="barAddress" destination="75j-zp-H4V" id="eXy-wY-IvB"/>
+                        <outlet property="barDesc" destination="ACZ-Dy-xiP" id="JEE-0B-BTP"/>
+                        <outlet property="barFeat" destination="2M0-0t-ZRl" id="VLe-Ty-IfT"/>
+                        <outlet property="barHours" destination="SMK-Kh-Wph" id="iMy-5L-jhS"/>
+                        <outlet property="barImg" destination="idc-8z-Hdy" id="vaF-sI-pap"/>
                         <outlet property="barLabel" destination="l6t-dE-Sbj" id="pbS-Jr-gQI"/>
+                        <outlet property="barPhone" destination="TqT-Jm-iP2" id="Zkg-gu-WDr"/>
                         <outlet property="mapView" destination="rFS-bF-XrA" id="QP2-I2-TBP"/>
                     </connections>
                 </viewController>
