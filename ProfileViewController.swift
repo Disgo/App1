@@ -39,17 +39,18 @@ class ProfileViewController: UIViewController {
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         barLabel.text = bar
         if (bar == "Absinthe House"){
-            barImg.image = UIImage(named: "rainbow_PNG5584")
-            barDesc.text = "THIS IS THE ABSITHE HAUS!!!!!!!!!!!!!!!!!!"
-            barFeat.text = "GET LOW"
-            barHours.text = "24/7"
-            barPhone.text = "867-5309"
-            barAddress.text = "8008 DickButt Drive"
+            barImg.image = UIImage(named: "profile-1")
+            barDesc.text = "Hip cocktail lounge & rooftop bar with absinthe service & snacks, DJs & dancing, plus happy hour."
+            barFeat.text = "DJ. Full bar. Patio."
+            barHours.text = "11:00 am - 2:00 am"
+            barPhone.text = "(303) 443-8600"
+            barAddress.text = "1109 Walnut St, Boulder, CO 80302"
             
             let lat = 40.016989
             
@@ -70,13 +71,13 @@ class ProfileViewController: UIViewController {
             
             centerMapOnLocation(initialLocation)
         }
-        if (bar == "Walrus"){
-            barImg.image = UIImage(named: "rainbow_PNG5584")
-            barDesc.text = "THIS IS THE WALRUS!!!!!!!!!!!!!!!!!!"
-            barFeat.text = "GET LOW"
-            barHours.text = "24/7"
-            barPhone.text = "867-5309"
-            barAddress.text = "8008 DickButt Drive"
+        if (bar == "The Walrus"){
+            barImg.image = UIImage(named: "profile-1")
+            barDesc.text = "Dark, raucous nightclub long known for booze bargains, DJs, dancing & games of all kinds."
+            barFeat.text = "-"
+            barHours.text = "4:00 pm - 2:00 am"
+            barPhone.text = "(303) 443-9902"
+            barAddress.text = "1911 11th St, Boulder, CO 80302"
             
             let lat = 40.016861
             
@@ -99,12 +100,12 @@ class ProfileViewController: UIViewController {
         }
         
         if (bar == "Press Play"){
-            barImg.image = UIImage(named: "rainbow_PNG5584")
-            barDesc.text = "THIS IS PRESS PLAY!!!!!!!!!!!!!!!!!!"
-            barFeat.text = "GET LOW"
-            barHours.text = "24/7"
-            barPhone.text = "867-5309"
-            barAddress.text = "8008 DickButt Drive"
+            barImg.image = UIImage(named: "profile-1")
+            barDesc.text = "No-frills hangout with pub grub, flat-screens & various old-school video games in a simple space."
+            barFeat.text = "-"
+            barHours.text = "4:00 pm - 2:00 am"
+            barPhone.text = "(720) 508-4916"
+            barAddress.text = "1005 Pearl St, Boulder, CO 80302"
             
             let lat = 40.017533
             
@@ -127,12 +128,12 @@ class ProfileViewController: UIViewController {
         }
         
         if (bar == "Biergarten"){
-            barImg.image = UIImage(named: "rainbow_PNG5584")
-            barDesc.text = "THIS IS THE BIERGARTEN!!!!!!!!!!!!!!!!!!"
-            barFeat.text = "GET LOW"
-            barHours.text = "24/7"
-            barPhone.text = "867-5309"
-            barAddress.text = "8008 DickButt Drive"
+            barImg.image = UIImage(named: "profile-1")
+            barDesc.text = "Rustic, Czech-style place offering a wide beer menu & traditional eats, plus a patio & live music."
+            barFeat.text = "-"
+            barHours.text = "12:00 pm - 2:00 am"
+            barPhone.text = "(720) 328-8328"
+            barAddress.text = "2017 13th St, Boulder, CO 80302"
             
             let lat = 40.018575
             
@@ -155,12 +156,12 @@ class ProfileViewController: UIViewController {
         }
         
         if (bar == "Tahona"){
-            barImg.image = UIImage(named: "rainbow_PNG5584")
-            barDesc.text = "THIS IS TAHONA!!!!!!!!!!!!!!!!!!"
-            barFeat.text = "GET LOW"
-            barHours.text = "24/7"
-            barPhone.text = "867-5309"
-            barAddress.text = "8008 DickButt Drive"
+            barImg.image = UIImage(named: "profile-1")
+            barDesc.text = "Chill choice with a wall of windows & a patio serving inventive Mexican meals & strong drinks."
+            barFeat.text = "-"
+            barHours.text = "3:00 pm - 1:00 am"
+            barPhone.text = "(303) 938-9600"
+            barAddress.text = "1035 Pearl St, Boulder, CO 80302"
             
             let lat = 40.017786
             

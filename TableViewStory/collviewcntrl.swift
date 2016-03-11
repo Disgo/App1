@@ -10,24 +10,28 @@ import UIKit
 
 class collviewcntrl: UICollectionViewController {
     
-    var tableImages: [String] = ["tahona-icon.png", "tahona-icon.png", "tahona-icon.png", "tahona-icon.png", "tahona-icon.png", "tahona-icon.png", "tahona-icon.png"]
+    var tableImages: [String] = ["icon3.png", "icon3.png", "icon3.png", "icon3.png", "icon3.png", "icon3.png", "icon3.png", "icon3.png", "icon3.png"]
     
-    var barNames: [String] = ["Tahona", "Press Play", "The Walrus", "Absinthe House", "Biergarten", "Rio", "Downer"]
+    var barNames: [String] = ["Tahona", "Press Play", "The Walrus", "Absinthe House", "Biergarten", "Rio", "Downer", "Downer", "Downer"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tableImages.count
+        
+        
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: ColViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! ColViewCell
         
-        let backgroundImage = UIImage(named: "blued.jpg")
+        let backgroundImage = UIImage(named: "background4.png")
         let imageView = UIImageView(image: backgroundImage)
         self.collectionView!.backgroundView = imageView
         imageView.contentMode = .ScaleAspectFill
@@ -35,10 +39,13 @@ class collviewcntrl: UICollectionViewController {
         cell.imgcell.image = UIImage (named: tableImages [indexPath.row])
         cell.imgLabel.text = barNames [indexPath.row]
         return cell
+        
+        
     }
 override     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         print("Cell \(indexPath.row) selected")
+    
     }
     
     
@@ -46,6 +53,8 @@ override
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+        
     }
     
 

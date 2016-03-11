@@ -44,11 +44,11 @@ class AttractionTableViewController: UITableViewController {
     
     /*Image Names*/
     
-    var specialsImages: [String] = ["icon-test",
-    "icon-test",
-    "icon-test",
-    "icon-test",
-    "icon-test"]
+    var specialsImages: [String] = ["icon3",
+    "icon3",
+    "icon3",
+    "icon3",
+    "icon3"]
     
     /*Bar Names*/
     
@@ -192,6 +192,20 @@ class AttractionTableViewController: UITableViewController {
     
     /*On pull to refresh reset the arrays and sort the time*/
     
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let headerview = view as! UITableViewHeaderFooterView
+        headerview.textLabel
+        headerview.textLabel?.font = UIFont(name: "Helvetica Neue", size: 20)
+        headerview.textLabel?.textColor = .whiteColor()
+        headerview.textLabel?.textAlignment = NSTextAlignment.Center
+        headerview.backgroundColor = .clearColor()
+        headerview.tintColor = .clearColor()
+        
+        
+    }
+    
+
+    
     func refresh(sender:AnyObject)
     {
         // Updating your data here...
@@ -206,6 +220,7 @@ class AttractionTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.tintColor = UIColor.whiteColor()
         
         /*When the screen loads populate array and sort specials*/
         
@@ -249,6 +264,8 @@ class AttractionTableViewController: UITableViewController {
             return "L A T E R   T O N I G H T"
         }
         return nil
+        
+        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -260,7 +277,7 @@ class AttractionTableViewController: UITableViewController {
         
         /*Background Image*/
         
-        let backgroundImage = UIImage(named: "blued.jpg")
+        let backgroundImage = UIImage(named: "background4.png")
         let imageView = UIImageView(image: backgroundImage)
         self.tableView.backgroundView = imageView
         tableView.tableFooterView = UIView(frame: CGRectZero)
@@ -268,7 +285,7 @@ class AttractionTableViewController: UITableViewController {
         
         self.tableView.separatorColor = UIColor.grayColor()
         tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        
+        self.tableView.backgroundView?.layer.zPosition -= +1
 
         
         if (indexPath.section == 0){
@@ -291,26 +308,15 @@ class AttractionTableViewController: UITableViewController {
             cell.attractionTime.text = attractionTimes2[indexPath.row]
             cell.imageView!.image = UIImage(named: attractionImages2[indexPath.row])
             //cell.attractionImage.image = UIImage(named: attractionImages2[indexPath.row])
+        
             
         }
+        
         return cell
     }
 
 
-    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        let headerview = view as! UITableViewHeaderFooterView
-        headerview.textLabel
-        headerview.textLabel?.font = UIFont(name: "Helvetica Neue", size: 14)
-        headerview.textLabel?.textColor = .whiteColor()
-        headerview.textLabel?.textAlignment = NSTextAlignment.Center
-        headerview.backgroundColor = .clearColor()
-        headerview.tintColor = .clearColor()
-       
-        
-        
-        
-    }
-    
+
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
