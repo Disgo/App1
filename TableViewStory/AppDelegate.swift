@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         
         //Set navigation bar background image
-        let navBgImage:UIImage = UIImage(named: "header4.png")!
+        let navBgImage:UIImage = UIImage(named: "headersmall.png")!
         UINavigationBar.appearance().setBackgroundImage(navBgImage, forBarMetrics: .Default)
         
      

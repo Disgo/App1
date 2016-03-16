@@ -10,7 +10,7 @@ import UIKit
 
 class collviewcntrl: UICollectionViewController {
     
-    var tableImages: [String] = ["icon3.png", "icon3.png", "icon3.png", "icon3.png", "icon3.png", "icon3.png", "icon3.png", "icon3.png", "icon3.png"]
+    var tableImages: [String] = ["icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png"]
     
     var barNames: [String] = ["Tahona", "Press Play", "The Walrus", "Absinthe House", "Biergarten", "Rio", "Downer", "Downer", "Downer"]
 

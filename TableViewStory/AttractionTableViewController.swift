@@ -44,11 +44,11 @@ class AttractionTableViewController: UITableViewController {
     
     /*Image Names*/
     
-    var specialsImages: [String] = ["icon3",
-    "icon3",
-    "icon3",
-    "icon3",
-    "icon3"]
+    var specialsImages: [String] = ["icondarker",
+    "icondarker",
+    "icondarker",
+    "icondarker",
+    "icondarker"]
     
     /*Bar Names*/
     
@@ -266,7 +266,9 @@ class AttractionTableViewController: UITableViewController {
         return nil
         
         
-    }
+ }
+    
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -336,7 +338,14 @@ class AttractionTableViewController: UITableViewController {
         }
     }
     
-    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerview = UITableViewHeaderFooterView()
+        let myView = UIImageView(frame: CGRectMake(10, -10, 40, 40));
+        let myImage = UIImage(named: "line")
+        myView.image = myImage
+        headerview.addSubview(myView)
+        return headerview
+    }
     
     /*
     // Override to support conditional editing of the table view.

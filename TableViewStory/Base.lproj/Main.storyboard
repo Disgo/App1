@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
     </dependencies>
     <scenes>
-        <!--DISGO-->
+        <!--Attraction Table View Controller-->
         <scene sceneID="GKh-8a-AXV">
             <objects>
                 <tableViewController id="NPG-Tl-6sB" customClass="AttractionTableViewController" customModule="TableViewStory" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,7 +27,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" id="AmU-ul-j1e">
-                                            <rect key="frame" x="15" y="25" width="32" height="21"/>
+                                            <rect key="frame" x="15" y="25" width="31" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Title">
@@ -42,7 +42,7 @@
                                             <size key="shadowOffset" width="-1" height="1"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LNk-OI-7zF">
-                                            <rect key="frame" x="542" y="25" width="43" height="21"/>
+                                            <rect key="frame" x="543" y="25" width="42" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Detail">
@@ -74,7 +74,7 @@
                             <outlet property="delegate" destination="NPG-Tl-6sB" id="Zyt-Qf-96F"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="DISGO" id="rss-NZ-8PI" customClass="UIW">
+                    <navigationItem key="navigationItem" id="rss-NZ-8PI" customClass="UIW">
                         <barButtonItem key="backBarButtonItem" title="Specials" id="Rmx-kE-NIT"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="nQt-Lv-oFv">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5pZ-ME-2Ix">
@@ -401,7 +401,7 @@
             </objects>
             <point key="canvasLocation" x="2867" y="352"/>
         </scene>
-        <!--DISGO-->
+        <!--Bars-->
         <scene sceneID="ML1-5d-arg">
             <objects>
                 <collectionViewController id="x6A-Kb-TRb" customClass="collviewcntrl" customModule="TableViewStory" customModuleProvider="target" sceneMemberID="viewController">
@@ -416,10 +416,10 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="usc-Ys-kU9" customClass="ColViewCell" customModule="TableViewStory" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="107" height="118"/>
+                                <rect key="frame" x="0.0" y="64" width="107" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="107" height="118"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="107" height="117"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJ6-RH-f4J">
@@ -436,7 +436,7 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <size key="customSize" width="107" height="118"/>
+                                <size key="customSize" width="107" height="117"/>
                                 <connections>
                                     <outlet property="imgLabel" destination="Gdc-V5-sj6" id="LnD-48-COD"/>
                                     <outlet property="imgcell" destination="zJ6-RH-f4J" id="P9v-tZ-a48"/>
@@ -450,7 +450,7 @@
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Bars" image="bars_icon" id="88b-dC-gU4"/>
-                    <navigationItem key="navigationItem" title="DISGO" id="Axi-U9-21O"/>
+                    <navigationItem key="navigationItem" id="Axi-U9-21O"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fu-3I-PXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -462,7 +462,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gZc-cH-rVO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Specials" image="specials-icon 2" id="uw9-7d-Z8N"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleAspectFit" barStyle="black" id="TPh-qO-rrt">
+                    <navigationBar key="navigationBar" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" barStyle="black" backIndicatorImage="line" id="TPh-qO-rrt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -553,11 +553,12 @@
     <resources>
         <image name="bars_icon" width="30" height="30"/>
         <image name="event-icon" width="30" height="30"/>
+        <image name="line" width="673" height="100"/>
         <image name="profile-1" width="2164" height="1440"/>
         <image name="specials-icon 2" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bXp-mW-Pa5"/>
+        <segue reference="Wsq-wC-EdH"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
 </document>
