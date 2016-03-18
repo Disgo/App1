@@ -10,9 +10,9 @@ import UIKit
 
 class collviewcntrl: UICollectionViewController {
     
-    var tableImages: [String] = ["icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png" , "icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png" , "icondarker.png" , "icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png", "icondarker.png"]
+    var tableImages: [String] = ["tahona.png", "pressplay.png", "thewalrus.png", "boulderhouse.png", "biergarten.png", "therio.png", "thedowner.png"]
     
-    var barNames: [String] = ["Tahona", "Press Play", "The Walrus", "Absinthe House", "Biergarten", "Rio Grande", "Conor O' Neils", "Sun Down Saloon", "Lazy Dog", "The Sink", "Half Fast Subs", "The Attic", "The Stanky Leg", "Wet Pits", "Adios Mofo", "Drunk Mother Teressa", "The Tipsy Cow", "Fat Angel", "The Fainting Goat", "95 Slide", "Club Bunny Girls" ]
+    var barNames: [String] = ["Tahona", "Press Play", "The Walrus", "Absinthe House", "Biergarten", "Rio", "Downer"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

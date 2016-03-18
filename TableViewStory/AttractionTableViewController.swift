@@ -44,18 +44,20 @@ class AttractionTableViewController: UITableViewController {
     
     /*Image Names*/
     
-    var specialsImages: [String] = ["icondarker",
-    "icondarker",
-    "icondarker",
-    "icondarker",
-    "icondarker"]
+    var specialsImages: [String] = ["thedowner",
+    "therio",
+    "biergarten",
+    "thewalrus",
+    "tahona",
+    "boulderhouse",
+    "pressplay"]
     
     /*Bar Names*/
     
-    var barNames: [String] = ["Biergarten",
-        "Walrus",
+    var barNames: [String] = ["The Downer", "The Rio", "Bohemian Biergarten",
+        "The Walrus",
         "Tahona",
-        "Absinthe House",
+        "Boulder House",
         "Press Play"]
 
     /*Hours that the special is going on (in military time)*/
@@ -83,10 +85,31 @@ class AttractionTableViewController: UITableViewController {
         }
     }
     
+    /*Populate arrays based off date*/
+    
+    func dateSort(){
+        if (dateComponents.day == 16){
+            DBarray = [[15,16], [20,21], [23], [21,22], [17]]
+        }
+        if (dateComponents.day == 17){
+            DBarray = [[13,14], [19,20], [15], [17,18], [18]]
+        }
+        if (dateComponents.day == 18){
+            DBarray = [[15,16], [20,21], [23], [21,22], [19]]
+        }
+        if (dateComponents.day == 19){
+            DBarray = [[15,16], [20,21], [23], [21,22], [20]]
+        }
+        if (dateComponents.day == 20){
+            DBarray = [[15,16], [20,21], [23], [21,22], [21]]
+        }
+        appendArray()
+    }
+    
     /*Sort the specials by time*/
     
     func sortTime(){
-        
+        dateSort()
         var xIndex = [Int]()
         
         /*Sort the DBArray numerically by first value in sub-array so that the specials are organized by time*/
@@ -285,7 +308,7 @@ class AttractionTableViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: CGRectZero)
         imageView.contentMode = .ScaleAspectFill
         
-        self.tableView.separatorColor = UIColor.grayColor()
+        
         tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
         self.tableView.backgroundView?.layer.zPosition -= +1
 
@@ -338,14 +361,14 @@ class AttractionTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerview = UITableViewHeaderFooterView()
-        let myView = UIImageView(frame: CGRectMake(10, -10, 40, 40));
-        let myImage = UIImage(named: "line")
-        myView.image = myImage
-        headerview.addSubview(myView)
-        return headerview
-    }
+//    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerview = UITableViewHeaderFooterView()
+//        let myView = UIImageView(frame: CGRectMake(10, -10, 40, 40));
+//        let myImage = UIImage(named: "line2")
+//        myView.image = myImage
+//        headerview.addSubview(myView)
+//        return headerview
+//    }
     
     /*
     // Override to support conditional editing of the table view.
