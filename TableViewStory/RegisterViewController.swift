@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  TableViewStory
 //
 //  Created by Technology, Arts, & Media on 3/31/16.
@@ -9,43 +9,33 @@
 import UIKit
 import Firebase
 
-var email = ""
-var pass = ""
+var createEmail = ""
+var createPass = ""
 
-
-class LoginViewController: UIViewController {
-
-    @IBOutlet weak var username: UITextField!
+class RegisterViewController: UIViewController {
     
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var registerEmail: UITextField!
     
-    @IBAction func loginButton(sender: AnyObject) {
-        email = username.text!
-        pass = password.text!
+    @IBOutlet weak var registerPassword: UITextField!
+    
+    @IBAction func createAccount(sender: AnyObject) {
+        
+        createEmail = registerEmail.text!
+        createPass = registerPassword.text!
         
         let ref = Firebase(url: "https://glaring-inferno-9037.firebaseio.com/")
-        ref.authUser(email, password: pass,
-            withCompletionBlock: { error, authData in
-                
+        ref.createUser(createEmail, password: createPass,
+            withValueCompletionBlock: { error, result in
                 if error != nil {
-                    self.username.text = ""
-                    self.password.text = ""
-                    // There was an error logging in to this account
+                    // There was an error creating the account
                 } else {
-                    self.performSegueWithIdentifier("homeScreen", sender: sender)
-                    // We are now logged in
+                    let uid = result["uid"] as? String
+                    print("Successfully created user account with uid: \(uid)")
+                    self.performSegueWithIdentifier("accountRegistered", sender: sender)
                 }
         })
-        
-        
-        
     }
-    
-    @IBAction func register(sender: AnyObject) {
-        performSegueWithIdentifier("registerScreen", sender: sender)
-    }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

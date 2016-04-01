@@ -19,6 +19,7 @@
 		6DE7FBAD1C8F337D00CBA9E0 /* collviewcntrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE7FBAB1C8F337D00CBA9E0 /* collviewcntrl.swift */; };
 		6DE7FBAE1C8F337D00CBA9E0 /* ColViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE7FBAC1C8F337D00CBA9E0 /* ColViewCell.swift */; };
 		AC08F9D11CADF44A000DC31A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08F9D01CADF44A000DC31A /* LoginViewController.swift */; };
+		AC08F9D31CAE261D000DC31A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08F9D21CAE261D000DC31A /* RegisterViewController.swift */; };
 		DDAF7952D0F0BF3B954828F6 /* Pods_TableViewStory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884CC519E5E7FCB3F16C175C /* Pods_TableViewStory.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		6DE7FBAC1C8F337D00CBA9E0 /* ColViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColViewCell.swift; sourceTree = "<group>"; };
 		884CC519E5E7FCB3F16C175C /* Pods_TableViewStory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TableViewStory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC08F9D01CADF44A000DC31A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AC08F9D21CAE261D000DC31A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FA418C42126D0D6492FFDD2C /* Pods-TableViewStory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableViewStory.release.xcconfig"; path = "Pods/Target Support Files/Pods-TableViewStory/Pods-TableViewStory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				6DE7FBA31C7952F300CBA9E0 /* ProfileScrollView.swift */,
 				6DAFE8A21C58605000A4FBCA /* AppDelegate.swift */,
 				6DAFE8A61C58605000A4FBCA /* Main.storyboard */,
+				AC08F9D21CAE261D000DC31A /* RegisterViewController.swift */,
 				AC08F9D01CADF44A000DC31A /* LoginViewController.swift */,
 				6DE7FBAB1C8F337D00CBA9E0 /* collviewcntrl.swift */,
 				6DE7FBAC1C8F337D00CBA9E0 /* ColViewCell.swift */,
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC08F9D11CADF44A000DC31A /* LoginViewController.swift in Sources */,
+				AC08F9D31CAE261D000DC31A /* RegisterViewController.swift in Sources */,
 				6DE7FBAD1C8F337D00CBA9E0 /* collviewcntrl.swift in Sources */,
 				6DAFE8B71C5861C700A4FBCA /* AttractionTableViewController.swift in Sources */,
 				6DE7FBA41C7952F300CBA9E0 /* ProfileScrollView.swift in Sources */,
