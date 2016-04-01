@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import Firebase
+
+
 
 class AttractionTableViewController: UITableViewController {
+    
+    // Create a reference to a Firebase location
+    var myRootRef = Firebase(url:"https://glaring-inferno-9037.firebaseio.com/")
+    
     
     /*Initialize NSDate to get the Day, Month, Year, Week of Year, Hour, Minute, Second, and Nanosecond*/
     
@@ -66,6 +73,26 @@ class AttractionTableViewController: UITableViewController {
     
     /*Remove items from popluated arrays when table refreshed*/
     
+    
+    
+    func addData(){
+        var ref1 = Firebase(url:"https://glaring-inferno-9037.firebaseio.com/barsMonday/0")
+        // Read data and react to changes
+        ref1.observeEventType(.Value, withBlock: {
+            snapshot in
+            var firebaseTest = snapshot.value
+            self.specialsArray[3] = firebaseTest as! String
+        })
+        var ref2 = Firebase(url:"https://glaring-inferno-9037.firebaseio.com/barsMonday/1")
+        // Read data and react to changes
+        ref2.observeEventType(.Value, withBlock: {
+            snapshot in
+            var firebaseTest = snapshot.value
+            self.specialsArray[4] = firebaseTest as! String
+        })
+
+    }
+    
     func resetArray(){
         attractionImages.removeAll()
         attractionImages2.removeAll()
@@ -109,7 +136,7 @@ class AttractionTableViewController: UITableViewController {
     /*Sort the specials by time*/
     
     func sortTime(){
-        dateSort()
+        //dateSort()
         var xIndex = [Int]()
         
         /*Sort the DBArray numerically by first value in sub-array so that the specials are organized by time*/
@@ -241,6 +268,9 @@ class AttractionTableViewController: UITableViewController {
     
     
     override func viewDidLoad() {
+        
+        addData()
+        
         super.viewDidLoad()
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         refreshControl?.tintColor = UIColor.whiteColor()
