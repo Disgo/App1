@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10109" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xfL-m6-gTW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3VM-RA-IOu">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Attraction Table View Controller-->
@@ -110,7 +110,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1i-6o-DYl">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-1" translatesAutoresizingMaskIntoConstraints="NO" id="idc-8z-Hdy">
                                                 <rect key="frame" x="0.0" y="-64" width="600" height="150"/>
@@ -355,7 +355,7 @@
                                             <constraint firstAttribute="trailing" secondItem="idc-8z-Hdy" secondAttribute="trailing" id="jIM-sx-vcP"/>
                                             <constraint firstItem="idc-8z-Hdy" firstAttribute="leading" secondItem="f1i-6o-DYl" secondAttribute="leading" id="mXk-0I-Ezm"/>
                                             <constraint firstItem="2M0-0t-ZRl" firstAttribute="top" secondItem="ACZ-Dy-xiP" secondAttribute="bottom" constant="20" id="mpJ-9Z-wIQ"/>
-                                            <constraint firstAttribute="height" constant="1000" id="nAR-WB-Mos"/>
+                                            <constraint firstAttribute="height" constant="500" id="nAR-WB-Mos"/>
                                             <constraint firstItem="Gi1-tL-7jT" firstAttribute="leading" secondItem="f1i-6o-DYl" secondAttribute="leading" constant="20" id="pVF-ft-B5S"/>
                                             <constraint firstItem="75j-zp-H4V" firstAttribute="top" secondItem="TqT-Jm-iP2" secondAttribute="bottom" constant="10" id="pXx-gj-9XF"/>
                                             <constraint firstItem="bHr-59-pZZ" firstAttribute="leading" secondItem="f1i-6o-DYl" secondAttribute="leading" constant="20" id="tti-JM-Xhw"/>
@@ -482,6 +482,77 @@
             </objects>
             <point key="canvasLocation" x="1136" y="380"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="5DZ-st-VR5">
+            <objects>
+                <viewController id="3VM-RA-IOu" customClass="LoginViewController" customModule="TableViewStory" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bxx-hk-GMM"/>
+                        <viewControllerLayoutGuide type="bottom" id="OdI-Lt-Kod"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HnB-6T-mEU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ku4-zc-Nnm">
+                                <rect key="frame" x="100" y="189" width="400" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HUn-WY-gU0"/>
+                                    <constraint firstAttribute="width" constant="400" id="kfv-cG-kEI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1QY-kJ-CEQ">
+                                <rect key="frame" x="100" y="248" width="400" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="MhK-Bq-fru"/>
+                                    <constraint firstAttribute="width" constant="400" id="wH8-7J-jd7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3i-ng-zrd">
+                                <rect key="frame" x="200" y="331" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.83346752899999998" green="0.91283024739999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="DGe-0m-m0I"/>
+                                    <constraint firstAttribute="width" constant="200" id="GL1-NG-1JP"/>
+                                </constraints>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <variation key="heightClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="200" y="331" width="200" height="230"/>
+                                </variation>
+                                <connections>
+                                    <action selector="loginButton:" destination="3VM-RA-IOu" eventType="touchUpInside" id="dRL-Rw-VBZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1QY-kJ-CEQ" firstAttribute="leading" secondItem="HnB-6T-mEU" secondAttribute="leading" constant="100" id="4P1-5Z-zhp"/>
+                            <constraint firstItem="1QY-kJ-CEQ" firstAttribute="top" secondItem="Ku4-zc-Nnm" secondAttribute="bottom" constant="29" id="OaW-d5-cNn"/>
+                            <constraint firstAttribute="trailing" secondItem="1QY-kJ-CEQ" secondAttribute="trailing" constant="100" id="Qp7-IX-lxa"/>
+                            <constraint firstItem="Ku4-zc-Nnm" firstAttribute="top" secondItem="Bxx-hk-GMM" secondAttribute="bottom" constant="169" id="RlA-ol-ea2"/>
+                            <constraint firstAttribute="trailing" secondItem="Ku4-zc-Nnm" secondAttribute="trailing" constant="100" id="SLe-5o-XlD"/>
+                            <constraint firstItem="g3i-ng-zrd" firstAttribute="top" secondItem="1QY-kJ-CEQ" secondAttribute="bottom" constant="53" id="coQ-wm-gZr"/>
+                            <constraint firstItem="1QY-kJ-CEQ" firstAttribute="top" secondItem="Ku4-zc-Nnm" secondAttribute="bottom" constant="29" id="gGb-bd-6qH"/>
+                            <constraint firstItem="g3i-ng-zrd" firstAttribute="centerX" secondItem="HnB-6T-mEU" secondAttribute="centerX" id="ivW-JY-anN"/>
+                            <constraint firstItem="Ku4-zc-Nnm" firstAttribute="leading" secondItem="HnB-6T-mEU" secondAttribute="leading" constant="100" id="n2g-fQ-R8G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="password" destination="1QY-kJ-CEQ" id="yc1-po-SNW"/>
+                        <outlet property="username" destination="Ku4-zc-Nnm" id="Mes-m0-obH"/>
+                        <segue destination="xfL-m6-gTW" kind="show" identifier="homeScreen" id="9h7-H2-6MZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DPr-61-mK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="288" y="-469"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="24D-um-njE">
             <objects>
@@ -555,7 +626,7 @@
         <image name="specials-icon 2" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wsq-wC-EdH"/>
+        <segue reference="bXp-mW-Pa5"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
 </document>
