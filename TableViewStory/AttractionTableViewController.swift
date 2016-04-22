@@ -43,55 +43,67 @@ class AttractionTableViewController: UITableViewController {
     
     /*Listed Specials*/
 
-    var specialsArray: [String] = ["$4 COLLEGE MARGARITAS",
+    
+    /*
+    var specialsArray:[String]
+        = ["$4 COLLEGE MARGARITAS",
                 "$3 CALLS\n$4 WELLS",
                 "$7 PITCHERS OF PBR",
                 "FISHBOWLS ALL NIGHT",
-                "FREE LAP DANCES"]
-    
+                "FREE LAP DANCES","FREE LAP DANCES","FREE LAP DANCES"]
+  */
     /*Image Names*/
     
-    var specialsImages: [String] = ["thedowner",
-    "therio",
-    "biergarten",
-    "thewalrus",
-    "tahona",
-    "boulderhouse",
-    "pressplay"]
+//    var specialsImages: [String] = ["thedowner",
+//    "therio",
+//    "biergarten",
+//    "thewalrus",
+//    "tahona",
+//    "boulderhouse",
+//    "pressplay"]
     
     /*Bar Names*/
     
-    var barNames: [String] = ["The Downer", "The Rio", "Bohemian Biergarten",
-        "The Walrus",
-        "Tahona",
-        "Boulder House",
-        "Press Play"]
+//    var barNames: [String] = ["The Downer", "The Rio", "Bohemian Biergarten",
+//        "The Walrus",
+//        "Tahona",
+//        "Boulder House",
+//        "Press Play"]
 
     /*Hours that the special is going on (in military time)*/
     
     var DBarray: [[Int]] = [[12,13], [19,20], [21], [22,23], [20]]
+
+    //empty array
+    
+    var specialsArray = [String]()
+    var specialsImages = [String]()
+    var barNames = [String]()
+    /*
+    var specialsImages=[String]()
+    var barNames=[String]()
+    */
     
     /*Remove items from popluated arrays when table refreshed*/
     
+    let ref = Firebase(url: "https://glaring-inferno-9037.firebaseio.com/")
     
-    
-    func addData(){
-        var ref1 = Firebase(url:"https://glaring-inferno-9037.firebaseio.com/barsMonday/0")
-        // Read data and react to changes
-        ref1.observeEventType(.Value, withBlock: {
-            snapshot in
-            var firebaseTest = snapshot.value
-            self.specialsArray[3] = firebaseTest as! String
-        })
-        var ref2 = Firebase(url:"https://glaring-inferno-9037.firebaseio.com/barsMonday/1")
-        // Read data and react to changes
-        ref2.observeEventType(.Value, withBlock: {
-            snapshot in
-            var firebaseTest = snapshot.value
-            self.specialsArray[4] = firebaseTest as! String
-        })
-
-    }
+//    func addData(){
+//        var specialCount: Int = 0
+//            ref.observeEventType(FEventType.Value, withBlock: {snapshot in
+//                if let snapshots = snapshot.children.allObjects as? [FDataSnapshot]{
+//                    for item in snapshots {
+//                        specialCount++
+//                        let specialName = item.value["name"] as? String
+//                        _ = item.value["bar"] as? String
+//                        _ = item.value["image"] as? String
+//                        //self.specialsArray.append(specialName!)
+//                        self.specialsArray[specialCount-1] = specialName!
+//                    }
+//                }
+//                self.tableView.reloadData()
+//            })
+//    }
     
     func resetArray(){
         attractionImages.removeAll()
@@ -136,7 +148,15 @@ class AttractionTableViewController: UITableViewController {
     /*Sort the specials by time*/
     
     func sortTime(){
-        //dateSort()
+        
+        
+        
+        
+
+        
+        
+        
+        
         var xIndex = [Int]()
         
         /*Sort the DBArray numerically by first value in sub-array so that the specials are organized by time*/
@@ -267,20 +287,70 @@ class AttractionTableViewController: UITableViewController {
     }
     
     
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        print("in viewwillappear")
+        
+        var specialCount: Int = 0
+        ref.observeEventType(FEventType.Value, withBlock: {snapshot in
+            //self.specialsArray=[]
+            //self.specialsArray=[]
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot]{
+                for item in snapshots {
+                    specialCount++
+                    let specialName = item.value["name"] as? String
+                    let specialBar = item.value["bar"] as? String
+                    let specialImage = item.value["image"] as? String
+                    self.specialsArray.append(specialName!)
+                    self.specialsImages.append(specialImage!)
+                    self.barNames.append(specialBar!)
+                    //self.specialsArray[specialCount-1] = specialName!
+                }
+            }
+            self.resetArray()
+            self.appendArray()
+            self.sortTime()
+            print(self.specialsArray)
+            self.tableView.reloadData()
+        })
+        /*
+        //from viewdidload
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            // load data
+            dispatch_async(dispatch_get_main_queue()) {
+                // update ui
+            }
+        }
+        
+        self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.tintColor = UIColor.whiteColor()
+        
+*/
+        
+        /*When the screen loads populate array and sort specials*/
+        
+        //appendArray()
+        //sortTime()
+
+        //end from viewdidload
+    }
+    
+    
     override func viewDidLoad() {
-        
-        addData()
-        
+        print("in viewdidload")
         super.viewDidLoad()
+
+        
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         refreshControl?.tintColor = UIColor.whiteColor()
         
         /*When the screen loads populate array and sort specials*/
         
-        appendArray()
-        sortTime()
-        tableView.estimatedRowHeight = 50
         
+
+        tableView.estimatedRowHeight = 50
     }
     
     
@@ -292,7 +362,7 @@ class AttractionTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
+        print("in numberofsections")
         /*Two sections "Happening Now" and "Later Tonight"*/
         
         return 2
@@ -300,9 +370,11 @@ class AttractionTableViewController: UITableViewController {
     
     var numberOfRowsAtSection: [Int] = []
     var rows: Int = 0
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         numberOfRowsAtSection = [attractionNames.count,attractionNames2.count]
         rows = numberOfRowsAtSection[section]
+        print("in tableview numberofrowsinsection \(rows)")
         return rows
     }
     
@@ -324,7 +396,7 @@ class AttractionTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        print("in tableview cellforrowatindexpath")
         let cell =
         self.tableView.dequeueReusableCellWithIdentifier(
             "AttractionTableCell", forIndexPath: indexPath)
@@ -366,7 +438,7 @@ class AttractionTableViewController: UITableViewController {
         
             
         }
-        
+        print(cell.attractionLabel.text)
         return cell
     }
 
