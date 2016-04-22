@@ -72,7 +72,7 @@ class AttractionTableViewController: UITableViewController {
 
     /*Hours that the special is going on (in military time)*/
     
-    var DBarray: [[Int]] = [[12,13], [19,20], [21], [22,23], [20]]
+    var DBarray = [[Int]]()
 
     //empty array
     
@@ -126,24 +126,24 @@ class AttractionTableViewController: UITableViewController {
     
     /*Populate arrays based off date*/
     
-    func dateSort(){
-        if (dateComponents.day == 16){
-            DBarray = [[15,16], [20,21], [23], [21,22], [17]]
-        }
-        if (dateComponents.day == 17){
-            DBarray = [[13,14], [19,20], [15], [17,18], [18]]
-        }
-        if (dateComponents.day == 18){
-            DBarray = [[15,16], [20,21], [23], [21,22], [19]]
-        }
-        if (dateComponents.day == 19){
-            DBarray = [[15,16], [20,21], [23], [21,22], [20]]
-        }
-        if (dateComponents.day == 20){
-            DBarray = [[15,16], [20,21], [23], [21,22], [21]]
-        }
-        appendArray()
-    }
+//    func dateSort(){
+//        if (dateComponents.day == 16){
+//            DBarray = [[15,16], [20,21], [23], [21,22], [17]]
+//        }
+//        if (dateComponents.day == 17){
+//            DBarray = [[13,14], [19,20], [15], [17,18], [18]]
+//        }
+//        if (dateComponents.day == 18){
+//            DBarray = [[15,16], [20,21], [23], [21,22], [19]]
+//        }
+//        if (dateComponents.day == 19){
+//            DBarray = [[15,16], [20,21], [23], [21,22], [20]]
+//        }
+//        if (dateComponents.day == 20){
+//            DBarray = [[15,16], [20,21], [23], [21,22], [21]]
+//        }
+//        appendArray()
+//    }
     
     /*Sort the specials by time*/
     
@@ -182,11 +182,26 @@ class AttractionTableViewController: UITableViewController {
                         attractionBars.append(barNames[array[x][array[x].count-1]])
                     }
                     else if (timeStart > 12){
-                        current = timeStart - 12
-                        attractionTimes.append("\(current) pm - \(timeEnd) pm")
-                        attractionNames.append(specialsArray[array[x][array[x].count-1]])
-                        attractionImages.append(specialsImages[array[x][array[x].count-1]])
-                        attractionBars.append(barNames[array[x][array[x].count-1]])
+                        current = time - 12
+                        if timeEnd > 12{
+                            timeEnd = timeEnd - 12
+                            attractionTimes.append("\(current) pm - \(timeEnd) am")
+                            attractionNames.append(specialsArray[array[x][array[x].count-1]])
+                            attractionImages.append(specialsImages[array[x][array[x].count-1]])
+                            attractionBars.append(barNames[array[x][array[x].count-1]])
+                        }
+                        else if timeEnd == 12{
+                            attractionTimes.append("\(current) pm - \(timeEnd) am")
+                            attractionNames.append(specialsArray[array[x][array[x].count-1]])
+                            attractionImages.append(specialsImages[array[x][array[x].count-1]])
+                            attractionBars.append(barNames[array[x][array[x].count-1]])
+                        }
+                        else{
+                            attractionTimes.append("\(current) pm - \(timeEnd) pm")
+                            attractionNames.append(specialsArray[array[x][array[x].count-1]])
+                            attractionImages.append(specialsImages[array[x][array[x].count-1]])
+                            attractionBars.append(barNames[array[x][array[x].count-1]])
+                        }
                     }
                     else {
                         attractionTimes.append("\(timeStart) am - \(timeEnd) am")
@@ -238,6 +253,12 @@ class AttractionTableViewController: UITableViewController {
                                     attractionImages2.append(specialsImages[array[x][array[x].count-1]])
                                     attractionBars2.append(barNames[array[x][array[x].count-1]])
                                 }
+                                else if timeEnd == 12{
+                                    attractionTimes2.append("\(current2) pm - \(timeEnd) am")
+                                    attractionNames2.append(specialsArray[array[x][array[x].count-1]])
+                                    attractionImages2.append(specialsImages[array[x][array[x].count-1]])
+                                    attractionBars2.append(barNames[array[x][array[x].count-1]])
+                                }
                                 else{
                                     attractionTimes2.append("\(current2) pm - \(timeEnd) pm")
                                     attractionNames2.append(specialsArray[array[x][array[x].count-1]])
@@ -256,6 +277,11 @@ class AttractionTableViewController: UITableViewController {
                     }
                 }
             }
+        }
+        if attractionNames.count==0{
+            attractionImages.append("")
+            attractionNames.append("        There are no specials happening right now!")
+            attractionTimes.append("")
         }
     }
     
@@ -295,14 +321,35 @@ class AttractionTableViewController: UITableViewController {
         
         var specialCount: Int = 0
         ref.observeEventType(FEventType.Value, withBlock: {snapshot in
-            //self.specialsArray=[]
-            //self.specialsArray=[]
+            self.specialsArray=[]
+            self.specialsImages=[]
+            self.barNames=[]
+            self.DBarray=[]
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot]{
                 for item in snapshots {
                     specialCount++
                     let specialName = item.value["name"] as? String
                     let specialBar = item.value["bar"] as? String
                     let specialImage = item.value["image"] as? String
+                    let startTime = item.value["start"] as? Int
+                    let endTime = item.value["end"] as? Int
+                    
+                    var timeDiff = endTime! - startTime!
+                    
+                    if timeDiff == 1 {
+                        var row = [Int]()
+                        row.append(startTime!)
+                        self.DBarray.append(row)
+                    }
+                    else {
+                        var row2 = [Int]()
+                        for var x = 0; x < timeDiff; x++ {
+                            row2.append(startTime! + x)
+                        }
+                        self.DBarray.append(row2)
+                    }
+                    
+                    
                     self.specialsArray.append(specialName!)
                     self.specialsImages.append(specialImage!)
                     self.barNames.append(specialBar!)

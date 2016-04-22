@@ -1,0 +1,51 @@
+{
+  "special1" : {
+    "bar" : "Absinthe House",
+    "end" : 18,
+    "image" : "boulderhouse",
+    "name" : "Margaritas",
+    "start" : 14
+  },
+  "special2" : {
+    "bar" : "Press Play",
+    "end" : 23,
+    "image" : "pressplay",
+    "name" : "Arcade Shit",
+    "start" : 21
+  },
+  "special3" : {
+    "bar" : "Tahona",
+    "end" : 16,
+    "image" : "tahona",
+    "name" : "Beer",
+    "start" : 15
+  },
+  "special4" : {
+    "bar" : "Biergarten",
+    "end" : 24,
+    "image" : "biergarten",
+    "name" : "Boots",
+    "start" : 23
+  },
+  "special5" : {
+    "bar" : "The Walrus",
+    "end" : 25,
+    "image" : "thewalrus",
+    "name" : "Please Work",
+    "start" : 20
+  },
+  "special6" : {
+    "bar" : "The Walrus",
+    "end" : 25,
+    "image" : "thewalrus",
+    "name" : "Please Work",
+    "start" : 20
+  },
+  "special7" : {
+    "bar" : "The Walrus",
+    "end" : 25,
+    "image" : "thewalrus",
+    "name" : "Please Work",
+    "start" : 20
+  }
+}

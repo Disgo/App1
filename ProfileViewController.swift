@@ -182,6 +182,62 @@ class ProfileViewController: UIViewController {
             
             centerMapOnLocation(initialLocation)
         }
+        
+        if (bar == "The Rio"){
+            barImg.image = UIImage(named: "profile-1")
+            barDesc.text = "Chill choice with a wall of windows & a patio serving inventive Mexican meals & strong drinks."
+            barFeat.text = "-"
+            barHours.text = "3:00 pm - 1:00 am"
+            barPhone.text = "(303) 938-9600"
+            barAddress.text = "1035 Pearl St, Boulder, CO 80302"
+            
+            let lat = 40.017786
+            
+            let lon = -105.281948
+            
+            let latitude:CLLocationDegrees = lat
+            let longitude:CLLocationDegrees = lon
+            let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+            
+            // set initial location in Honolulu
+            let initialLocation = CLLocation(latitude: lat, longitude: lon)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = location
+            annotation.title = bar
+            //annotation.subtitle = "One day bla bla"
+            mapView.addAnnotation(annotation)
+            
+            
+            centerMapOnLocation(initialLocation)
+        }
+        
+        if (bar == "The Downer"){
+            barImg.image = UIImage(named: "profile-1")
+            barDesc.text = "Chill choice with a wall of windows & a patio serving inventive Mexican meals & strong drinks."
+            barFeat.text = "-"
+            barHours.text = "3:00 pm - 1:00 am"
+            barPhone.text = "(303) 938-9600"
+            barAddress.text = "1035 Pearl St, Boulder, CO 80302"
+            
+            let lat = 40.017786
+            
+            let lon = -105.281948
+            
+            let latitude:CLLocationDegrees = lat
+            let longitude:CLLocationDegrees = lon
+            let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+            
+            // set initial location in Honolulu
+            let initialLocation = CLLocation(latitude: lat, longitude: lon)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = location
+            annotation.title = bar
+            //annotation.subtitle = "One day bla bla"
+            mapView.addAnnotation(annotation)
+            
+            
+            centerMapOnLocation(initialLocation)
+        }
 
         
     }

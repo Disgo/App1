@@ -12,7 +12,7 @@ class collviewcntrl: UICollectionViewController {
     
     var tableImages: [String] = ["tahona.png", "pressplay.png", "thewalrus.png", "boulderhouse.png", "biergarten.png", "therio.png", "thedowner.png"]
     
-    var barNames: [String] = ["Tahona", "Press Play", "The Walrus", "Absinthe House", "Biergarten", "Rio", "Downer"]
+    var barNames: [String] = ["Tahona", "Press Play", "The Walrus", "Absinthe House", "Biergarten", "The Rio", "The Downer"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
