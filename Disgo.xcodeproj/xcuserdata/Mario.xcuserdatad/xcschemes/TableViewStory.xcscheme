@@ -17,7 +17,7 @@
                BlueprintIdentifier = "6DAFE89E1C58604F00A4FBCA"
                BuildableName = "TableViewStory.app"
                BlueprintName = "TableViewStory"
-               ReferencedContainer = "container:TableViewStory.xcodeproj">
+               ReferencedContainer = "container:Disgo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "6DAFE89E1C58604F00A4FBCA"
             BuildableName = "TableViewStory.app"
             BlueprintName = "TableViewStory"
-            ReferencedContainer = "container:TableViewStory.xcodeproj">
+            ReferencedContainer = "container:Disgo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,7 +58,7 @@
             BlueprintIdentifier = "6DAFE89E1C58604F00A4FBCA"
             BuildableName = "TableViewStory.app"
             BlueprintName = "TableViewStory"
-            ReferencedContainer = "container:TableViewStory.xcodeproj">
+            ReferencedContainer = "container:Disgo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,7 +77,7 @@
             BlueprintIdentifier = "6DAFE89E1C58604F00A4FBCA"
             BuildableName = "TableViewStory.app"
             BlueprintName = "TableViewStory"
-            ReferencedContainer = "container:TableViewStory.xcodeproj">
+            ReferencedContainer = "container:Disgo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
