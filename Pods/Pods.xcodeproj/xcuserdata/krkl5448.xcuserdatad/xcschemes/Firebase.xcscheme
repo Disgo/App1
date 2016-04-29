@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6DAFE89E1C58604F00A4FBCA"
-               BuildableName = "TableViewStory.app"
-               BlueprintName = "TableViewStory"
-               ReferencedContainer = "container:Disgo.xcodeproj">
+               BlueprintIdentifier = "B7AC9326D819482593FE118E915409D7"
+               BuildableName = "Firebase.framework"
+               BlueprintName = "Firebase"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6DAFE89E1C58604F00A4FBCA"
-            BuildableName = "TableViewStory.app"
-            BlueprintName = "TableViewStory"
-            ReferencedContainer = "container:Disgo.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6DAFE89E1C58604F00A4FBCA"
-            BuildableName = "TableViewStory.app"
-            BlueprintName = "TableViewStory"
-            ReferencedContainer = "container:Disgo.xcodeproj">
+            BlueprintIdentifier = "B7AC9326D819482593FE118E915409D7"
+            BuildableName = "Firebase.framework"
+            BlueprintName = "Firebase"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6DAFE89E1C58604F00A4FBCA"
-            BuildableName = "TableViewStory.app"
-            BlueprintName = "TableViewStory"
-            ReferencedContainer = "container:Disgo.xcodeproj">
+            BlueprintIdentifier = "B7AC9326D819482593FE118E915409D7"
+            BuildableName = "Firebase.framework"
+            BlueprintName = "Firebase"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

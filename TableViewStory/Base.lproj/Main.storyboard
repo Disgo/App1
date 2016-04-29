@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xfL-m6-gTW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3VM-RA-IOu">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -92,7 +92,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jom-O5-hhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2101" y="313"/>
+            <point key="canvasLocation" x="1952" y="372"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="gAF-NJ-WBt">
@@ -452,7 +452,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fu-3I-PXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1964" y="1030"/>
+            <point key="canvasLocation" x="1952" y="1074"/>
         </scene>
         <!--Specials-->
         <scene sceneID="8X7-Ts-p7z">
@@ -480,7 +480,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7W-s0-NQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1136" y="258"/>
+            <point key="canvasLocation" x="1136" y="380"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="5DZ-st-VR5">
@@ -679,13 +679,30 @@
                     <connections>
                         <segue destination="gZc-cH-rVO" kind="relationship" relationship="viewControllers" id="hJd-Dj-UjK"/>
                         <segue destination="c8o-qk-ewh" kind="relationship" relationship="viewControllers" id="aCa-5d-4pi"/>
-                        <segue destination="LfZ-SZ-gTb" kind="relationship" relationship="viewControllers" id="fL4-Jy-udV"/>
-                        <segue destination="XTO-DY-bfS" kind="relationship" relationship="viewControllers" id="BYn-bn-TMI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJU-lr-M7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="328" y="372"/>
+        </scene>
+        <!--Events-->
+        <scene sceneID="u6c-qV-F16">
+            <objects>
+                <viewController id="DzK-s7-qFA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6fI-IP-ZRU"/>
+                        <viewControllerLayoutGuide type="bottom" id="r9Q-yd-2B0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3ZP-Yn-aMk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Events" image="event-icon" id="QuF-2Q-BPX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VQ6-cY-CXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="246" y="1153"/>
         </scene>
         <!--Bars-->
         <scene sceneID="gG3-dS-1P0">
@@ -713,171 +730,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdf-ZZ-LPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1512" y="1197"/>
-        </scene>
-        <!--Friends-->
-        <scene sceneID="exn-bo-U7K">
-            <objects>
-                <viewController id="LfZ-SZ-gTb" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UJA-vM-jtl"/>
-                        <viewControllerLayoutGuide type="bottom" id="GQE-n0-529"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="uh0-Ta-5ii">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expo-mockup-friends" translatesAutoresizingMaskIntoConstraints="NO" id="Twb-5d-mRb">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDj-jq-c6P">
-                                <rect key="frame" x="20" y="20" width="45" height="45"/>
-                                <state key="normal" image="hamburger"/>
-                                <connections>
-                                    <segue destination="K4q-TV-qEp" kind="show" id="MQl-eI-2Ei"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Twb-5d-mRb" secondAttribute="trailing" id="7dL-cZ-Ymq"/>
-                            <constraint firstItem="Twb-5d-mRb" firstAttribute="leading" secondItem="uh0-Ta-5ii" secondAttribute="leading" id="Fix-xA-hYP"/>
-                            <constraint firstItem="Twb-5d-mRb" firstAttribute="top" secondItem="uh0-Ta-5ii" secondAttribute="top" id="QL9-9v-ds8"/>
-                            <constraint firstItem="GQE-n0-529" firstAttribute="top" secondItem="Twb-5d-mRb" secondAttribute="bottom" id="ROI-pz-eh9"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Friends" image="friends-icon" id="FQG-c0-90k"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hHq-O5-AOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-19" y="1187"/>
-        </scene>
-        <!--Map-->
-        <scene sceneID="Yub-nF-59P">
-            <objects>
-                <viewController id="XTO-DY-bfS" userLabel="Map" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5zs-YC-yP4"/>
-                        <viewControllerLayoutGuide type="bottom" id="IMc-qn-Bef"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Aiy-V3-k6T">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expo-mockup-map" translatesAutoresizingMaskIntoConstraints="NO" id="wmZ-mW-d30">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAj-Kp-rR4">
-                                <rect key="frame" x="20" y="20" width="45" height="45"/>
-                                <state key="normal" image="hamburger"/>
-                                <connections>
-                                    <segue destination="Pfx-JL-IJa" kind="show" id="Hjz-mn-bue"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wmZ-mW-d30" firstAttribute="leading" secondItem="Aiy-V3-k6T" secondAttribute="leading" id="9UQ-zB-Wg8"/>
-                            <constraint firstAttribute="trailing" secondItem="wmZ-mW-d30" secondAttribute="trailing" id="IpA-XT-CIQ"/>
-                            <constraint firstItem="IMc-qn-Bef" firstAttribute="top" secondItem="wmZ-mW-d30" secondAttribute="bottom" id="VRs-GO-8le"/>
-                            <constraint firstItem="wmZ-mW-d30" firstAttribute="top" secondItem="Aiy-V3-k6T" secondAttribute="top" id="wx6-P2-dcu"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="map-icon (1)" id="odg-eg-JHO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MOe-5k-oE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="739" y="1187"/>
-        </scene>
-        <!--Hamburger-->
-        <scene sceneID="aMe-Rm-vtN">
-            <objects>
-                <viewController id="Pfx-JL-IJa" userLabel="Hamburger" customClass="MenuViewController" customModule="TableViewStory" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HYP-YH-1zP"/>
-                        <viewControllerLayoutGuide type="bottom" id="DcH-EE-toE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nQk-Dy-zbI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expo-mockup-ham" translatesAutoresizingMaskIntoConstraints="NO" id="jE6-uM-A6P">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuP-Ua-4S7">
-                                <rect key="frame" x="20" y="20" width="45" height="45"/>
-                                <state key="normal" image="hamburger"/>
-                                <connections>
-                                    <action selector="back:" destination="Pfx-JL-IJa" eventType="touchUpInside" id="qwZ-TH-ziY"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="DcH-EE-toE" firstAttribute="top" secondItem="jE6-uM-A6P" secondAttribute="bottom" id="Vby-9Z-aBz"/>
-                            <constraint firstItem="jE6-uM-A6P" firstAttribute="top" secondItem="nQk-Dy-zbI" secondAttribute="top" id="Zaf-FL-WZC"/>
-                            <constraint firstItem="jE6-uM-A6P" firstAttribute="leading" secondItem="nQk-Dy-zbI" secondAttribute="leading" id="nSw-Kq-mHL"/>
-                            <constraint firstAttribute="trailing" secondItem="jE6-uM-A6P" secondAttribute="trailing" id="wgX-cw-aeB"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="map-icon (1)" id="62r-9Q-7kd"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L8h-cU-3PI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="739" y="1931"/>
-        </scene>
-        <!--Hanburger2-->
-        <scene sceneID="jkR-ii-FqB">
-            <objects>
-                <viewController id="K4q-TV-qEp" userLabel="Hanburger2" customClass="menu2ViewController" customModule="TableViewStory" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="h0e-cm-U5t"/>
-                        <viewControllerLayoutGuide type="bottom" id="sb3-CR-7AJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CV5-oE-fBu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expo-mockup-ham" translatesAutoresizingMaskIntoConstraints="NO" id="Fwz-WL-oon">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qD0-LR-Dky">
-                                <rect key="frame" x="20" y="20" width="45" height="45"/>
-                                <state key="normal" image="hamburger"/>
-                                <connections>
-                                    <action selector="back2:" destination="K4q-TV-qEp" eventType="touchUpInside" id="zOS-gm-qex"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Fwz-WL-oon" secondAttribute="trailing" id="0h3-Nc-hkO"/>
-                            <constraint firstItem="sb3-CR-7AJ" firstAttribute="top" secondItem="Fwz-WL-oon" secondAttribute="bottom" id="7dH-u7-nqP"/>
-                            <constraint firstItem="Fwz-WL-oon" firstAttribute="top" secondItem="CV5-oE-fBu" secondAttribute="top" id="Wia-nw-GrI"/>
-                            <constraint firstItem="Fwz-WL-oon" firstAttribute="leading" secondItem="CV5-oE-fBu" secondAttribute="leading" id="hDU-Pp-ieU"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Friends" image="friends-icon" id="4wN-hz-LPa"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fWd-uX-nxv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-19" y="1957"/>
+            <point key="canvasLocation" x="1136" y="1068"/>
         </scene>
     </scenes>
     <resources>
         <image name="bars_icon" width="30" height="30"/>
-        <image name="expo-mockup-friends" width="720" height="1200"/>
-        <image name="expo-mockup-ham" width="720" height="1200"/>
-        <image name="expo-mockup-map" width="720" height="1200"/>
-        <image name="friends-icon" width="30" height="30"/>
-        <image name="hamburger" width="79" height="79"/>
-        <image name="map-icon (1)" width="30" height="30"/>
+        <image name="event-icon" width="30" height="30"/>
         <image name="profile-1" width="2164" height="1440"/>
         <image name="specials-icon 2" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9h7-H2-6MZ"/>
-        <segue reference="Wsq-wC-EdH"/>
+        <segue reference="bXp-mW-Pa5"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
 </document>
